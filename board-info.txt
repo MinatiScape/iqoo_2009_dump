@@ -1,0 +1,3 @@
+require version-baseband=4.0.c4-00003-LAHAINA_GEN_PACK-1.355967.89
+require version-trustzone=TZ.XF.5.11-357020-2
+require version-vendor=1619150636
