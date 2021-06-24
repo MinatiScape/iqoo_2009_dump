@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rawDenoiserConfig>
+  <noiseProfile>
+      <a0>0.0007448347</a0>
+      <a1>0.0290013498</a1>
+      <b0>0.0000018790</b0>
+      <b1>0.0035276356</b1>
+  </noiseProfile>
+  <TotalLevNum>11</TotalLevNum>
+  <scaleHigFreq description="high freq denoise strength, higer value stronger noise reduction.">1.0</scaleHigFreq>
+  <scaleMidFreq description="mid freq denoise strength, higer value stronger noise reduction.">1.0</scaleMidFreq>
+  <scaleLowFreq description="low freq denoise strength, higer value stronger noise reduction.">1.0</scaleLowFreq>
+  <bayerSharpenEnable description="1 - enable bayer sharpen. 0 - disable bayer sharpen.">1</bayerSharpenEnable>
+  <roiProfile>
+    <selectFrameRoiEnable description="1 - enable frame selection with ROI. 0 - disable frame selection with ROI.">0</selectFrameRoiEnable>
+    <roiWeight description="1.0 - use roi clarity value only. 0 - use full image clarity value only.">1.0</roiWeight>
+  </roiProfile>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">50</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">0.5</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is less than the certain amount of the reference frame will not be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.95</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">4</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.21,0.22,0.23,0.24</K_detail>
+          <K_denoise>3.0,3.1,3.2,3.4</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>0.8,1.0,1.2,1.4</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">100</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">0.5</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.9</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.5</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">4</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.22,0.23,0.24,0.25</K_detail>
+          <K_denoise>3.0,3.1,3.2,3.4</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>0.8,1.0,1.2,1.4</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">200</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">0.6</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.85</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">2.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">4</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.24,0.25,0.26,0.28</K_detail>
+          <K_denoise>3.0,3.1,3.2,3.4</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>0.8,1.0,1.2,1.4</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">400</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">0.7</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.8</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">2.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">2.5</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">4</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.26,0.27,0.28,0.30</K_detail>
+          <K_denoise>3.0,3.2,3.3,3.5</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>0.8,1.0,1.2,1.4</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">600</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">0.8</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.7</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">2.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">3.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">4</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.28,0.29,0.30,0.32</K_detail>
+          <K_denoise>3.1,3.3,3.4,3.6</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>0.8,1.0,1.2,1.4</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">800</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.6</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">3.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">3.5</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">4</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.30,0.31,0.32,0.34</K_detail>
+          <K_denoise>3.2,3.4,3.5,3.7</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>1.0,1.2,1.5,1.7</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">1600</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.5</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">4.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">4.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">3</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.32,0.33,0.34,0.36</K_detail>
+          <K_denoise>3.4,3.6,3.8,4.0</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>1.2,1.4,1.7,2.0</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">2400</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.9</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.5</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">5.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">4.5</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">3</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.32,0.33,0.34,0.36</K_detail>
+          <K_denoise>3.4,3.6,3.8,4.0</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>1.4,1.6,1.9,2.2</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">3200</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.9</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.5</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">5.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">5.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">2</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.32,0.33,0.34,0.36</K_detail>
+          <K_denoise>3.4,3.6,3.8,4.0</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>1.4,1.6,1.9,2.2</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">4000</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.9</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.4</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">5.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">5.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">2</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.32,0.33,0.34,0.36</K_detail>
+          <K_denoise>3.4,3.6,3.8,4.0</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>1.4,1.6,1.9,2.2</Mth>
+      </robustMaskParameters>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">6400</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.9</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">0.4</blendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">6.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">5.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <usmStrength description="usm strength">2</usmStrength>
+      <kernelParameters description="drcGain ={1,2,3,4}">
+          <Dtr>0.2,0.2,0.2,0.2</Dtr>
+          <Dth>0.01,0.01,0.01,0.01</Dth>
+          <K_stretch>5.0,5.0,5.0,5.0</K_stretch>
+          <K_shrink>1.0,1.0,1.0,1.0</K_shrink>
+          <K_detail>0.35,0.36,0.37,0.40</K_detail>
+          <K_denoise>3.4,3.6,3.8,4.0</K_denoise>
+      </kernelParameters>  
+      <robustMaskParameters description="drcGain ={1,2,3,4}">
+          <s1>12.0,12.0,12.0,12.0</s1>
+          <s2>2.0,2.0,2.0,2.0</s2>
+          <t>0.12,0.12,0.12,0.12</t>
+          <Mth>1.4,1.6,1.9,2.2</Mth>
+     </robustMaskParameters>
+  </levConfigData>
+</rawDenoiserConfig>

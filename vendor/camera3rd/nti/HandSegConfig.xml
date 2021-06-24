@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HandSegConfig version="0.0.1">
+
+	<DetModel>
+		<Runtime>qnn</Runtime>
+		<Devices>3</Devices>
+		<ModelPath>/vendor/camera3rd/nti/handdet_sim10_8_quant.bin</ModelPath>
+		<Scale>0.2994662191353592</Scale>
+		<ZeroPoint>81</ZeroPoint>
+	</DetModel>
+
+	<SegModel>
+		<Runtime>qnn</Runtime>
+		<Devices>3</Devices>
+		<ModelPath>/vendor/camera3rd/nti/tf_hand_pt_new03_distill_4_qt.bin</ModelPath>
+	</SegModel>
+
+	<HumanDilateSize>0</HumanDilateSize>
+
+	<RegionThres>25</RegionThres>
+
+	<HandMaskColor>10</HandMaskColor>
+
+	<!-- 日志等级 0.FATAL 4.Debug -->
+	<DebugLevel>4</DebugLevel>
+
+</HandSegConfig>

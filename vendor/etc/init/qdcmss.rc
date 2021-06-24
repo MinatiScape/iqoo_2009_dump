@@ -1,0 +1,12 @@
+service qdcmss /vendor/bin/qdcmss
+    class late_start
+    user root
+    group root graphics
+    socket qdcmsocket stream 0777 root adb
+    disabled
+
+on property:vendor.display.qdcm_socket_service=1
+    start qdcmss
+
+on property:vendor.display.qdcm_socket_service=0
+    stop qdcmss

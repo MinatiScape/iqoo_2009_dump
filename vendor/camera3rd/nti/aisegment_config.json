@@ -1,0 +1,49 @@
+{
+    "segment_configs": {
+        "dumpPath": "data/vendor/camera/test/aisegment/result/"
+    },
+    "network_configs": [
+        {
+            "type": 1,
+            "typename": "SEG_HUMAN_MINI_1",
+            "modelPath": "vendor/camera3rd/nti/fbp.bin",
+            "networkRuntime": "cttm",
+            "deviceType": 0,
+            "threadNum": 1,
+            "powerFactor": 1.5,
+            "postPluginType": "ArgmaxTransmitP"
+        },
+        {
+            "type": 3,
+            "typename": "SEG_HUMAN_NORMAL_1",
+            "modelPath": "vendor/camera3rd/nti/fbc.bin",
+            "networkRuntime": "cttm",
+            "deviceType": 0,
+            "postPluginType": "ArgmaxTransmitC"
+        },
+        {
+            "type": 7,
+            "typename": "SEG_HUMAN_WITH_DEPTH_1",
+            "modelPath": "vendor/camera3rd/nti/bbcg.bin",
+            "networkRuntime": "cttm",
+            "deviceType": 1,
+            "postPluginType": "NoProcess"
+        },
+        {
+            "type": 8,
+            "typename": "SEG_HUMAN_WITH_DEPTH_2",
+            "modelPath": "vendor/camera3rd/nti/bbcc.bin",
+            "networkRuntime": "cttm",
+            "deviceType": 0,
+            "postPluginType": "ArgmaxTransmitT"
+        },
+        {
+            "type": 9,
+            "typename": "SEG_HUMAN_WITH_ROI",
+            "modelPath": "vendor/camera3rd/nti/dbs.bin",
+            "networkRuntime": "qnn",
+            "deviceType": 3,
+            "postPluginType": "DoubleResizeArgmax"
+        }
+    ]
+}

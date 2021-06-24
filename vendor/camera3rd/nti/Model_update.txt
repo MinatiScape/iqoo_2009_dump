@@ -1,0 +1,23 @@
+time:2020/11/10
+model_update:
+
+    model_name: bbcc.bin (BackBokehCaptureCpu)
+    project_name: tf_refinenet_mobilenet_100_v2_t16_quant
+    platfrom: CTTM
+    
+    model_name: bbcg.bin (BackBokehCaptureGpu)
+    project_name: tf_refinenet_mobilenet_100_v2_t14_onlygpu
+    platform: CTTM
+    
+    model_name: fbc.bin (FrontBokehCapture)
+    project_name: tf_vrc_refinenet_mobilenet_100_256_t7_quant
+    platform: CTTM
+    
+    model_name: fbp.bin (FrontBokehPreview)
+    project_name: tf_refinenet_mobilenet_035_v2_hdr_t3_distill_quant
+    platform: CTTM
+    
+    model_name: dbs.bin (DualBokehSegment)
+    project_name: ref_mobilenet_140_640_qt_cascadepsp_block5_t4
+    platform: QNN
+    

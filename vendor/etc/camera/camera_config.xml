@@ -1,0 +1,91 @@
+<!--
+CameraModuleConfig :
+	This node must be added for each module prosent in the device.
+	It contain all information about the module present.
+	The number of nodes of CameraModuleConfig indicate number of modules
+	to be probed on the device.
+	Maximum number of CameraModuleConfig nodes is 10
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+CameraId :
+	Camera Id is the Slot number in which the mode is plugged.
+	Valid values are 0, 1, 2 and 3.
+
+ModuleType:
+    The description of this camera module.
+	Valid map:
+	1.main
+	2.wide
+	3.rtb
+	4.video
+	5.tele
+	6.portrait
+	7.depth
+	8.mono
+	9.infrared
+	10.macro
+	11.fish-eye
+
+Position:
+    The position of the camera module.
+	Valid values are: rear, front
+
+SubNum:
+	Use to identify multiple camera which have the same ModuleType. If only one, this value is 0, other wise config this value increase in sequence, such as 0、1、2...
+
+SubAttribute:
+	The porterty of the module which is to distinguish the two same ModuleType.If there is no same moduletype camera exist, this value can be omited.
+	For example,if the project has two tele modules, One of them is 2x tele, and another one is 5x tele.
+
+	we can config as:
+    <CameraModuleConfig>
+      <CameraId>2</CameraId>
+      <ModuleType>main</ModuleType>
+	  <Position>rear</Position>
+	  <SubNum></SubNum>
+	  <SubAttribute>2x</SubAttribute>
+    </CameraModuleConfig>
+    <CameraModuleConfig>
+      <CameraId>3</CameraId>
+      <ModuleType>main</ModuleType>
+	  <Position>rear</Position>
+	  <SubNum>1</SubNum>
+	  <SubAttribute>5x</SubAttribute>
+    </CameraModuleConfig>
+
+Note: if there is no multiple cameras have the same ModuleType, SubNum and SubAttribute could be null
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*VARIABLES MARKED WITH ASTRICK (*) ARE MANDATORY.
+-->
+
+<CameraConfigurationRoot>
+  <CameraModuleConfig>
+    <CameraId>0</CameraId>
+    <Position>rear</Position>
+    <ModuleType>main</ModuleType>
+    <SubNum></SubNum>
+    <SubAttribute></SubAttribute>
+    <thermal_path>/sys/cam_thermal/cam_thermal_sensor0</thermal_path>
+  </CameraModuleConfig>
+  <CameraModuleConfig>
+    <CameraId>1</CameraId>
+    <Position>front</Position>
+    <ModuleType>main</ModuleType>
+    <SubNum></SubNum>
+    <SubAttribute></SubAttribute>
+  </CameraModuleConfig>
+  <CameraModuleConfig>
+    <CameraId>2</CameraId>
+    <Position>rear</Position>
+    <ModuleType>wide</ModuleType>
+    <SubNum></SubNum>
+    <SubAttribute></SubAttribute>
+  </CameraModuleConfig>
+  <CameraModuleConfig>
+    <CameraId>3</CameraId>
+    <Position>rear</Position>
+    <ModuleType>tele</ModuleType>
+    <SubNum></SubNum>
+    <SubAttribute></SubAttribute>
+  </CameraModuleConfig>
+</CameraConfigurationRoot>
+

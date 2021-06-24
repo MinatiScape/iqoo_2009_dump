@@ -1,0 +1,33 @@
+// @file sns_sdb.proto
+//
+// Defines standard message types for the sdb feature
+//
+// Copyright (c) 2019 VIVO
+// All Rights Reserved.
+syntax = "proto2";
+import "nanopb.proto";
+
+
+enum sns_logger_msgid
+{
+  option (nanopb_enumopt).long_names = false;
+
+  SNS_LOGGER_MSGID_REQ = 810;
+  SNS_LOGGER_MSGID_EVENT = 811;
+}
+
+message sns_logger_req
+{
+  required uint32 type = 1;
+  repeated float fdata = 2 [(nanopb).max_count = 3];
+  repeated uint32 idata = 3 [(nanopb).max_count = 3];
+}
+
+message sns_logger_event
+{
+  required uint32 msg_id = 1;
+  required uint32 type = 2;
+  repeated float data = 3 [(nanopb).max_count = 4];
+  repeated uint32 ts = 4 [(nanopb).max_count = 2];
+}
+

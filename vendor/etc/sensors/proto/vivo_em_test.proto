@@ -1,0 +1,97 @@
+// @file sns_rawdata.proto
+//
+// Defines standard message types pertaining to calibration
+//
+// Copyright (c) 2016-2017 Qualcomm Technologies, Inc.
+// All Rights Reserved.
+// Confidential and Proprietary - Qualcomm Technologies, Inc.
+syntax = "proto2";
+import "nanopb.proto";
+
+
+enum vivo_em_test_msgid
+{
+  option (nanopb_enumopt).long_names = false;
+  VIVO_MSGID_SNS_SENSOR_TEST_CONFIG =  519;
+  VIVO_MSGID_SNS_SENSOR_GET_DATA_EVENT = 1023;
+  VIVO_MSGID_SNS_SENSOR_INTERRUPT_EVENT = 1031;
+}
+
+// Supported test types for physical sensors
+enum vivo_physical_sensor_test_type
+{
+  option (nanopb_enumopt).long_names = false;
+
+  // get raw data
+  VIVO_PHYSICAL_SENSOR_TEST_TYPE_GET_DATA = 0;
+
+  // Read register .
+  VIVO_PHYSICAL_SENSOR_TEST_TYPE_READ_REG = 1;
+
+  // Write register .
+  VIVO_PHYSICAL_SENSOR_TEST_TYPE_WRITE_REG = 2;
+
+  // comand 
+  VIVO_PHYSICAL_SENSOR_TEST_TYPE_COMMAND = 3;
+  //write cali value.
+  VIVO_PHYSICAL_SENSOR_TEST_TYPE_SET_CALI = 4;
+
+  //turn over the  coordinates of physical sensors
+  VIVO_SENSOR_DIRECTION_TURN_OVER = 5;
+  //smart_scrn sensor needs to know screen is off or not
+  VIVO_NOTIFY_SCREEN_STATUS = 6;
+}
+enum vivo_sensor_test_status
+{
+  option (nanopb_enumopt).long_names = false;
+  VIVO_SENSOR_TEST_STATUS_SUCCESS = 0;
+  
+  VIVO_SENSOR_TEST_STATUS_FAIL = 1;
+
+  VIVO_SENSOR_TEST_STATUS_UNKNWON = 2;
+
+}
+// Physical Sensor test configuration request
+message vivo_physical_sensor_test_config
+{
+  // Requested test type.
+  required vivo_physical_sensor_test_type test_type = 1;
+  required uint32 param1 = 2;
+  required uint32 param2 = 3;
+}
+
+message vivo_physical_sensor_transfer_data
+{
+  // Requested test type.
+  required vivo_physical_sensor_test_type test_type = 1;
+  required int32 param1 = 2;
+  required int32 param2 = 3;
+  optional int32 param3 = 4;
+}
+
+message vivo_physical_sensor_batch_data
+{
+  // Requested test type.
+  required vivo_physical_sensor_test_type test_type = 1;
+  required float param1 = 2;
+  required float param2 = 3;
+  required float param3 = 4;
+  required float param4 = 5;
+  required float param5 = 6;
+  required float param6 = 7;
+  required float param7 = 8;
+  required float param8 = 9;
+  required float param9 = 10;
+}
+
+message  vivo_physical_sensor_get_data_event
+{
+  repeated float data = 1;
+  required vivo_sensor_test_status status = 2 [default = VIVO_SENSOR_TEST_STATUS_UNKNWON];
+}
+
+message  vivo_physical_sensor_interrupt_event
+{
+  repeated float data = 1;
+}
+

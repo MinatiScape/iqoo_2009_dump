@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AiFaceEnhanceConfig version="0.0.1">
+    <!-- 算法应用场景 -->
+    <WorkScence>0</WorkScence>
+    <!-- 是否内部检测人脸 0: 内部不计算; 1: 内部计算 -->
+    <FaceDetectOn>1</FaceDetectOn>
+    <!-- 是否内部做肤色分割 0: 内部不计算; 1: 内部计算 -->
+    <SkinSegOn>0</SkinSegOn>
+    <KeyPointOn>1</KeyPointOn>
+    <MaxFaceEnNum>1</MaxFaceEnNum>
+    <LocalEnhance>0</LocalEnhance>
+    <BigModelResolution>512</BigModelResolution>
+    <ISOParam>
+        <low>200</low>
+        <middle>800</middle>
+        <high>800</high>
+    </ISOParam>
+    <!-- 网络选择，正式版本可能没有这个参数-->
+    <ModelPath>
+        <!--FaceEnhanceModel use="1" sapce2depth="0" range="0" resi="1" engine="3" device="2">/vendor/camera3rd/nti/101003002002022002.bin</FaceEnhanceModel-->
+        <!-- <HumanSeg use="1" sapce2depth="0" range="0" resi="0" engine="5" device="2">/vendor/camera3rd/nti/aisr/900005000003000001.bin</HumanSeg> -->
+        <HumanSeg use="1" sapce2depth="0" range="0" resi="0" engine="4" device="4" inw="640" inh="640">/vendor/camera3rd/nti/aisr/102004004003000001.bin</HumanSeg>
+        <FaceEnhanceModel use="1" sapce2depth="0" range="0" resi="1" engine="4" device="4" inw="256" inh="256">/vendor/camera3rd/nti/aisr/102004004002000000.bin</FaceEnhanceModel>
+        <FaceEnhanceBigModel use="1" sapce2depth="0" range="0" resi="1" engine="4" device="4" inw="512" inh="512">/vendor/camera3rd/nti/aisr/102004004002000001.bin</FaceEnhanceBigModel>
+    </ModelPath>
+
+    <FaceSrFunc>
+        <BlendRate>20</BlendRate>
+        <ExtendRate>44</ExtendRate>
+        <FaceEnhanceModelMaxFaceSize>256</FaceEnhanceModelMaxFaceSize>
+        <FaceEnhanceModelMinFaceSize>128</FaceEnhanceModelMinFaceSize>
+        <FaceEnhanceBigModelMaxFaceSize>550</FaceEnhanceBigModelMaxFaceSize>
+        <FaceEnhanceBigModelMinFaceSize>257</FaceEnhanceBigModelMinFaceSize>
+        <UpOffset>0.0</UpOffset>
+    </FaceSrFunc>
+
+</AiFaceEnhanceConfig>

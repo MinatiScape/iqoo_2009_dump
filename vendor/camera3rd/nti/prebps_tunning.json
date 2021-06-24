@@ -1,0 +1,16 @@
+{
+    "PreBPSParams":	{
+        "wideIsoThrold":	6000,
+        "mainIsoThrold":	10000,
+        "teleIsoThrold":	6000,
+        "wideExpTThrold":	500,
+        "mainExpTThrold":	500,
+        "teleExpTThrold":	500,
+        "bpcHotFactor": 	1.1,
+        "bpcColdFactor":	0.333,
+        "offsetMax":	3,
+        "offsetMin":	2,
+        "highlightDetectThresh": 	1.2,
+        "highlightValueThresh": 	0
+    }
+}

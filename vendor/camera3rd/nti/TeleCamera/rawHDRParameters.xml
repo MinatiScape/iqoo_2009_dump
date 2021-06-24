@@ -1,0 +1,510 @@
+<?xml version="1.0"?>
+<RAWHDR_ALG_Parameters>
+  <COMMON>
+    <xmlVersion description="xml Version ">2.5.102</xmlVersion>
+    <DUMP>
+      <DumpMergeInput description="dump control for hdr input raw, convert to jpg">0</DumpMergeInput>
+    </DUMP>
+    <DEBUG>
+      <AdjustEv0 description="improve the brightness of ev0, range is -2 to 2">0</AdjustEv0>
+    </DEBUG>
+  </COMMON>
+  <Exposrue_Strategy>
+    <fHdrExpOverExpRatioTH>0.001</fHdrExpOverExpRatioTH>
+    <fHdrExpUnderExpRatioTH>0.005</fHdrExpUnderExpRatioTH>
+    <fLowLightTH>500</fLowLightTH>
+  </Exposrue_Strategy>
+  <AIDenoise>
+    <Enable>
+      <SupperNigntAIEnable description="enable AI denoise for supper night mode">0</SupperNigntAIEnable>
+      <MotionModeAIEnable description="enable AI denoise for motion mode">0</MotionModeAIEnable>
+      <fOffModeAIEnableGainThesh description="gain thresh for off mode to enable AI denoise">16.0</fOffModeAIEnableGainThesh>
+      <fEV0AIEnableDeltaEVThesh description="delta EV thresh for EV0 to enable AI denoise">-2.0</fEV0AIEnableDeltaEVThesh>
+    </Enable>
+    <DebugLevel>1</DebugLevel>
+    <Ev0Xml>AIDenoiseConfig.xml</Ev0Xml>
+    <EvnXml>AIDenoiseConfigEvm.xml</EvnXml>
+  </AIDenoise>
+  <HighlightClip>
+    <Enable>1</Enable>
+    <ClipThresh description="ClipThresh range is 0-1.0, control the clip value.">0.25</ClipThresh>
+  </HighlightClip>
+  <Deglare>
+    <Enable>1</Enable>
+    <fDeglareRatio>0.5</fDeglareRatio>
+    <fDeflareRatio>0.5</fDeflareRatio>
+  </Deglare>
+  <CyanCorrect>
+    <Enable>1</Enable>
+    <fBrightTh description="brightTh range is 0.1-0.9, only correct pixel bright than threshold">0.7</fBrightTh>
+    <i32CyanCorrectStrength description="the range is 0 - 32000, control the correct strength.">22000</i32CyanCorrectStrength>
+  </CyanCorrect>
+  <FixBlackLevel>
+    <Enable>1</Enable>
+    <gainNum description="max Support 10 gains" >8</gainNum>
+    <gain>4 8 16 32 64 128 160 256</gain>
+    <ob0>1024 1024 1024 1024 1024 1024 1024 1024</ob0>
+    <ob1>1024 1024 1024 1024 1024 1024 1024 1024</ob1>
+    <ob2>1024 1024 1024 1024 1024 1024 1024 1024</ob2>
+    <ob3>1024 1024 1024 1024 1024 1024 1024 1024</ob3>
+  </FixBlackLevel>
+  <Preprocess>
+    <f32defaultShadingTab description="the shading table is copy from the most bright part shading lut in bps lsc">
+      <r_gain_tab>
+        <r_gain>3.665194 3.332428 2.962198 2.643395 2.374306 2.210567 2.10272 2.033792 1.9979 2.017799 2.080998 2.183999 2.33564 2.592843 2.897342 3.271173 3.633351 3.454417 3.017792 2.642784 2.335349 2.123525 1.965354 1.832177 1.742207 1.705974 1.727747 1.809641 1.938814 2.092712 2.292372 2.580632 2.947242 3.394851 3.204182 2.762844 2.392975 2.133609 1.922316 1.729325 1.577982 1.483251 1.448205 1.472164 1.560844 1.703697 1.895582 2.096312 2.33808 2.702804 3.152237 3.000592 2.561009 2.226851 1.980465 1.736584 1.528113 1.379457 1.28842 1.254182 1.28079 1.364935 1.506615 1.710605 1.947606 2.178456 2.508291 2.967018 2.866792 2.420256 2.116215 1.852576 1.590162 1.387032 1.241256 1.151945 1.118654 1.145473 1.228119 1.366239 1.563717 1.816234 2.070165 2.36983 2.820378 2.76441 2.341045 2.050937 1.764588 1.500409 1.301149 1.155339 1.067206 1.033494 1.058387 1.143089 1.280328 1.475358 1.731042 2.005479 2.289029 2.729612 2.736459 2.317959 2.030792 1.738312 1.471377 1.269756 1.127278 1.03634 1.009122 1.029856 1.113642 1.249082 1.444409 1.702548 1.984921 2.267462 2.690196 2.758121 2.347331 2.056688 1.77213 1.505684 1.303822 1.158982 1.069804 1.035651 1.062158 1.143163 1.281881 1.476387 1.73599 2.011553 2.296379 2.732525 2.868046 2.430899 2.128418 1.864561 1.604072 1.39663 1.250257 1.157538 1.1247 1.148728 1.231919 1.369095 1.568548 1.8222 2.080067 2.379772 2.82173 3.017334 2.575446 2.244759 2.000353 1.755361 1.544137 1.393454 1.298337 1.26503 1.288999 1.371474 1.51316 1.714677 1.958602 2.192394 2.521989 2.979783 3.212783 2.785128 2.416382 2.157873 1.948925 1.751564 1.594476 1.497084 1.460067 1.48442 1.569754 1.716756 1.909228 2.114727 2.360984 2.728625 3.184128 3.499883 3.046645 2.665654 2.354869 2.1449 1.984197 1.845366 1.755407 1.72104 1.740244 1.821273 1.953722 2.109776 2.306015 2.60008 2.979302 3.459289 3.781764 3.368536 2.980999 2.649679 2.389215 2.222144 2.111272 2.040968 2.006619 2.026844 2.088171 2.196012 2.35086 2.596769 2.908804 3.288334 3.722595</r_gain>
+      </r_gain_tab>
+      <gr_gain_tab>
+        <gr_gain>3.290322 2.979099 2.653141 2.383094 2.148732 2.011804 1.923982 1.865036 1.838194 1.852791 1.908552 1.992597 2.126013 2.343547 2.604998 2.934737 3.273594 3.077081 2.693942 2.373495 2.107202 1.931254 1.797262 1.689657 1.615377 1.585284 1.605089 1.673124 1.779936 1.90845 2.076643 2.329287 2.642919 3.047742 2.850666 2.471784 2.156463 1.934043 1.759633 1.597624 1.473305 1.394508 1.36744 1.387075 1.46023 1.58088 1.739846 1.908949 2.118502 2.433425 2.838106 2.682292 2.298423 2.012111 1.80405 1.597753 1.427223 1.30329 1.229571 1.20314 1.223646 1.291782 1.41171 1.580856 1.781536 1.981285 2.268735 2.678012 2.560317 2.181236 1.920733 1.698329 1.477813 1.308328 1.188837 1.117567 1.091256 1.112564 1.177413 1.293509 1.459076 1.674312 1.892005 2.15324 2.558782 2.477119 2.114733 1.864571 1.624606 1.402424 1.23795 1.120496 1.050679 1.025727 1.044513 1.110798 1.223274 1.387929 1.605765 1.840496 2.087079 2.480106 2.448213 2.0922 1.847526 1.601627 1.379662 1.213944 1.099139 1.027795 1.007993 1.023462 1.087264 1.197706 1.361437 1.579842 1.821098 2.065935 2.454088 2.477383 2.120186 1.871061 1.62934 1.407887 1.239258 1.122747 1.052234 1.026534 1.045513 1.108916 1.22298 1.385861 1.606214 1.842623 2.090125 2.47077 2.558874 2.188262 1.929824 1.706249 1.487899 1.313901 1.193158 1.12076 1.095481 1.113597 1.179842 1.292637 1.461713 1.677748 1.899291 2.159221 2.557862 2.68669 2.30776 2.024223 1.816351 1.612513 1.439117 1.312303 1.235575 1.209742 1.227311 1.29507 1.413726 1.582292 1.787101 1.99031 2.277181 2.68904 2.855634 2.485035 2.170337 1.949504 1.774265 1.609298 1.482321 1.40257 1.370825 1.391742 1.46355 1.582407 1.743585 1.917789 2.130322 2.452198 2.861356 3.100938 2.70888 2.382633 2.119264 1.941698 1.806399 1.693824 1.619223 1.588833 1.60824 1.675424 1.784775 1.914098 2.083964 2.337739 2.662722 3.096364 3.342144 2.991455 2.651965 2.375348 2.15103 2.011012 1.921212 1.860792 1.834485 1.847354 1.904236 1.990244 2.122276 2.332749 2.601873 2.935327 3.341725</gr_gain>
+      </gr_gain_tab>
+      <gb_gain_tab>
+        <gb_gain>3.291808 2.959186 2.645065 2.372361 2.146577 2.010379 1.921233 1.863123 1.836617 1.85098 1.903966 1.990482 2.122368 2.336694 2.596393 2.921899 3.266835 3.05933 2.676605 2.36194 2.096208 1.923054 1.792243 1.684114 1.611068 1.580876 1.600431 1.670218 1.7751 1.905119 2.070844 2.321671 2.633976 3.036749 2.829146 2.45489 2.142456 1.924872 1.751298 1.59263 1.468341 1.389796 1.364022 1.382537 1.455589 1.57625 1.73435 1.906031 2.112216 2.423926 2.826397 2.663142 2.282188 2.000395 1.792435 1.59164 1.42235 1.298108 1.225913 1.199564 1.220322 1.289076 1.408272 1.575573 1.776831 1.975863 2.26043 2.666724 2.543056 2.167907 1.909171 1.687754 1.471077 1.303041 1.184692 1.114286 1.088077 1.10965 1.174898 1.290676 1.455171 1.670438 1.886746 2.147514 2.549548 2.465705 2.101218 1.852671 1.61648 1.396857 1.234279 1.117813 1.048362 1.023629 1.042755 1.109924 1.221528 1.385009 1.602807 1.836738 2.082173 2.472479 2.438924 2.080491 1.837261 1.59432 1.374757 1.211415 1.098289 1.027571 1.007005 1.022901 1.087624 1.19859 1.361392 1.579262 1.819923 2.062134 2.450261 2.468405 2.105151 1.861395 1.62094 1.403753 1.23729 1.121192 1.051703 1.026231 1.046264 1.111481 1.223986 1.386817 1.607177 1.843188 2.089163 2.478219 2.547114 2.177021 1.919819 1.69881 1.48342 1.31174 1.192807 1.120266 1.094692 1.114376 1.180761 1.294007 1.462816 1.677874 1.899733 2.15804 2.556145 2.671966 2.298279 2.014524 1.809474 1.608485 1.437926 1.312108 1.235993 1.209948 1.228437 1.297127 1.415396 1.581943 1.790252 1.99053 2.276538 2.687557 2.849 2.474393 2.161591 1.94504 1.772144 1.609904 1.483215 1.403701 1.374346 1.395969 1.46691 1.588059 1.74613 1.92085 2.131448 2.447997 2.861284 3.091191 2.699091 2.377583 2.115861 1.942562 1.811366 1.697793 1.624835 1.594188 1.613893 1.681823 1.789935 1.919668 2.087385 2.338922 2.66562 3.102516 3.344487 2.990122 2.65524 2.380508 2.152032 2.018189 1.929649 1.872317 1.844641 1.860212 1.916772 2.001032 2.129699 2.340908 2.605856 2.937761 3.339296</gb_gain>
+      </gb_gain_tab>
+      <b_gain_tab>
+        <b_gain>3.080201 2.783423 2.486627 2.231781 2.029837 1.909712 1.828462 1.778484 1.751433 1.767038 1.813031 1.88449 1.997679 2.189694 2.430698 2.727679 3.039711 2.884726 2.520645 2.231654 1.991429 1.83462 1.716756 1.620472 1.555033 1.525911 1.541136 1.599198 1.692977 1.807093 1.955769 2.177412 2.465245 2.84012 2.670269 2.321637 2.035326 1.83645 1.680444 1.536335 1.424475 1.352903 1.32823 1.34241 1.405114 1.512138 1.651917 1.804653 1.990271 2.271434 2.647806 2.516085 2.163138 1.906655 1.720711 1.537984 1.379986 1.271129 1.204379 1.181903 1.195933 1.254502 1.36044 1.509034 1.691895 1.866813 2.12767 2.50747 2.406613 2.059647 1.829238 1.627764 1.427282 1.274074 1.166735 1.103561 1.082524 1.096481 1.152687 1.254493 1.402528 1.595397 1.7922 2.026275 2.395514 2.339488 2.002751 1.77851 1.562955 1.35986 1.213072 1.104933 1.046904 1.025754 1.038578 1.094514 1.192723 1.339091 1.534681 1.745487 1.966666 2.329683 2.317078 1.982106 1.763718 1.540928 1.340484 1.191276 1.09017 1.027832 1.012091 1.020699 1.075318 1.169961 1.316634 1.513692 1.731053 1.948794 2.302715 2.339599 2.008132 1.783319 1.564734 1.363589 1.212966 1.108141 1.047081 1.025367 1.039436 1.092371 1.193401 1.338083 1.53687 1.748822 1.97066 2.31989 2.403746 2.061967 1.832334 1.631986 1.435272 1.27675 1.17157 1.105879 1.084676 1.099005 1.153976 1.251138 1.404617 1.602342 1.79846 2.028571 2.388658 2.515433 2.169833 1.914443 1.726824 1.545837 1.389708 1.27566 1.209629 1.187925 1.200211 1.258063 1.364397 1.513896 1.700115 1.878843 2.130732 2.514065 2.662876 2.326116 2.044736 1.847421 1.6938 1.545889 1.432972 1.360273 1.333494 1.350848 1.40919 1.518011 1.662515 1.815839 2.002497 2.288491 2.672224 2.903951 2.530274 2.234572 1.997623 1.842783 1.723464 1.623566 1.557291 1.531644 1.5479 1.605032 1.699218 1.812899 1.962827 2.184216 2.483823 2.891099 3.141319 2.798819 2.485473 2.235372 2.029594 1.911716 1.834233 1.781534 1.759422 1.767553 1.814552 1.887348 2.007195 2.19099 2.438507 2.743633 3.121939</b_gain>
+      </b_gain_tab>
+    </f32defaultShadingTab>
+    <i32defalutGammaTab description="the gamma table is copy from the most bright part gamma lut in ipe gamma">
+      <tableNum>5</tableNum>
+      <lux_start>0 120 240 265 400</lux_start>
+      <lux_end>80 230 255 380 1000</lux_end>
+      <gammalen>257</gammalen>
+      <table0>0 14 27 41 55 68 82 95 108 121 134 147 159 172 184 196 208 220 231 243 254 265 276 287 297 307 317 327 337 347 356 366 374 383 392 401 409 418 426 434 442 449 456 464 471 478 485 492 499 505 511 518 524 530 536 542 547 553 558 564 569 574 579 585 590 595 600 604 609 613 618 622 627 631 635 639 643 648 652 656 660 664 668 671 675 678 682 685 689 692 696 700 703 707 710 713 716 719 722 725 728 731 734 737 740 743 746 749 751 754 757 760 762 765 768 770 773 776 779 781 784 786 789 791 794 796 798 801 803 805 808 810 812 814 817 819 821 823 825 827 830 832 834 836 838 840 842 844 846 848 850 852 854 856 858 860 862 863 865 867 869 871 873 875 876 878 880 882 884 886 887 889 891 893 894 896 898 900 901 903 905 906 908 910 912 913 915 917 918 920 922 923 925 927 928 930 931 933 935 936 938 939 941 943 944 946 947 949 951 952 954 955 957 958 960 961 963 964 965 967 968 970 971 973 974 976 977 979 980 982 983 985 986 988 989 991 992 994 995 996 998 999 1001 1002 1004 1005 1007 1008 1010 1011 1013 1014 1016 1017 1019 1020 1023</table0>
+      <table1>0 14 26 38 50 63 75 87 101 115 128 142 156 168 180 194 207 219 231 241 251 263 275 285 295 305 315 324 333 342 352 360 368 376 385 393 401 409 417 423 429 437 443 449 456 464 472 480 487 495 502 509 516 523 529 536 542 548 554 560 566 571 577 582 587 592 597 602 606 611 615 620 624 628 632 636 640 644 647 651 654 658 661 664 667 671 674 677 680 683 686 689 692 695 698 701 704 707 710 713 716 719 722 724 727 730 733 736 738 741 744 746 749 752 754 757 760 762 765 767 770 773 775 778 780 783 785 787 790 792 795 797 799 802 804 807 809 811 813 816 818 820 822 825 827 829 831 833 836 838 840 842 844 846 848 850 853 855 857 859 861 863 865 867 869 871 873 875 877 878 880 882 884 886 888 890 892 894 895 897 899 901 903 905 906 908 910 912 913 915 917 919 920 922 924 926 927 929 931 932 934 936 937 939 941 942 944 946 947 949 951 952 954 955 957 959 960 962 963 965 967 968 970 971 973 974 976 977 979 981 982 984 985 987 988 990 991 993 994 996 997 999 1000 1002 1003 1005 1006 1008 1009 1011 1013 1014 1016 1017 1019 1020 1024</table1>
+      <table2>0 10 20 28 38 48 58 69 83 96 107 122 137 153 167 181 195 207 219 231 243 255 265 275 287 299 309 319 329 339 349 359 369 379 390 398 406 416 426 434 442 450 458 464 470 478 486 492 498 506 512 518 524 530 536 542 548 554 560 564 570 576 580 584 590 594 600 604 608 612 618 622 626 630 634 638 643 647 651 655 659 663 667 671 675 677 681 685 688 691 695 699 701 705 708 711 715 717 720 723 727 729 732 735 739 741 744 747 749 752 755 757 760 763 765 768 771 773 775 777 780 783 785 788 790 792 795 797 799 801 804 806 808 811 813 815 817 820 822 824 826 828 831 833 835 837 839 841 843 845 847 849 851 853 855 857 859 861 863 865 867 869 871 873 875 877 879 880 882 884 886 888 890 891 893 895 897 899 901 903 905 907 909 911 912 914 915 917 919 921 923 924 926 927 929 931 932 934 935 937 939 940 942 943 945 947 948 950 951 953 955 956 958 959 961 963 964 966 967 968 970 971 973 975 976 978 979 980 982 983 985 987 988 990 991 992 994 995 997 999 1000 1001 1003 1004 1006 1007 1008 1010 1011 1013 1015 1016 1018 1019 1020 1022 1024</table2>
+      <table3>0 14 26 38 50 63 75 87 101 115 128 142 156 168 180 194 207 219 231 241 251 263 275 285 295 305 315 324 333 342 352 360 368 376 385 393 401 409 417 423 429 437 443 449 456 464 472 480 487 495 502 509 516 523 529 536 542 548 554 560 566 571 577 582 587 592 597 602 606 611 615 620 624 628 632 636 640 644 647 651 654 658 661 664 667 671 674 677 680 683 686 689 692 695 698 701 704 707 710 713 716 719 722 724 727 730 733 736 738 741 744 746 749 752 754 757 760 762 765 767 770 773 775 778 780 783 785 787 790 792 795 797 799 802 804 807 809 811 813 816 818 820 822 825 827 829 831 833 836 838 840 842 844 846 848 850 853 855 857 859 861 863 865 867 869 871 873 875 877 878 880 882 884 886 888 890 892 894 895 897 899 901 903 905 906 908 910 912 913 915 917 919 920 922 924 926 927 929 931 932 934 936 937 939 941 942 944 946 947 949 951 952 954 955 957 959 960 962 963 965 967 968 970 971 973 974 976 977 979 981 982 984 985 987 988 990 991 993 994 996 997 999 1000 1002 1003 1005 1006 1008 1009 1011 1013 1014 1016 1017 1019 1020 1024</table3>
+      <table4>0 8 15 23 31 39 48 56 65 74 84 94 104 115 126 137 149 160 172 184 196 207 219 230 241 252 263 273 283 293 302 311 320 329 338 346 354 362 370 377 385 392 399 406 413 420 427 433 440 446 453 459 465 471 477 483 489 495 500 506 512 517 523 528 533 539 544 549 554 559 564 569 574 579 583 588 593 597 602 607 611 616 620 624 629 633 637 642 646 650 654 658 662 666 670 674 678 682 686 690 694 697 701 705 708 712 715 719 722 726 729 733 736 739 743 746 749 752 756 759 762 765 768 771 774 777 780 783 786 789 791 794 797 800 803 805 808 811 813 816 819 822 824 827 829 832 835 837 840 843 845 848 851 853 856 858 861 864 866 869 871 874 876 879 881 884 886 888 891 893 895 898 900 902 904 907 909 911 913 915 917 919 921 923 925 927 929 931 932 934 936 938 940 941 943 945 946 948 950 951 953 954 956 958 959 961 962 964 965 967 968 969 971 972 974 975 976 978 979 980 982 983 984 985 987 988 989 990 991 993 994 995 996 997 998 999 1000 1002 1003 1004 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1024</table4>
+    </i32defalutGammaTab>
+  </Preprocess>
+  <Alignment>
+    <bForceMerge>0</bForceMerge>
+    <downScaleLevel>4</downScaleLevel>
+    <DeleteFrameParam>
+      <i32DeleteFrameDisable>1</i32DeleteFrameDisable>
+      <f32DeleteFrameSensitivity description="range is [0, 10), the lower the value, the easier to delete frame, default value is 1.0f.">1.0</f32DeleteFrameSensitivity>
+    </DeleteFrameParam>
+    <LocalDRLossParam>
+      <i32OverExpPortraitLocalDRLossEnable>1</i32OverExpPortraitLocalDRLossEnable>
+      <i32HDRLocalDRLossEnable>1</i32HDRLocalDRLossEnable>
+      <i32SNSLocalDRLossEnable>0</i32SNSLocalDRLossEnable>
+      <fHDRLocalDRLossOverExpAreaTH description="range is [0, 10].">1.0</fHDRLocalDRLossOverExpAreaTH>
+      <fLLHDRLocalDRLossOverExpAreaTH description="range is [0, 10].">1.0</fLLHDRLocalDRLossOverExpAreaTH>
+    </LocalDRLossParam>
+    <PatchMatchParam>
+      <i32PatchMatchDisMCEnable>1</i32PatchMatchDisMCEnable>
+      <i32PatchMatchThreadEnable>1</i32PatchMatchThreadEnable>
+    </PatchMatchParam>
+    <MotionModeParam>
+      <fOverExpMotionPortraitTh description="range is [0, 1], control portrait scene choose motion mode, default value is 0.125f.">0.125</fOverExpMotionPortraitTh>
+      <fOverExpMotionNormalTh description="range is [0, 1], control nonportrait scene choose motion mode, default value is 0.32f.">0.26</fOverExpMotionNormalTh>
+    </MotionModeParam>
+  </Alignment>
+  <Ltm>
+    <f32ColorCorrection description="control corlor correction strength, range is 1.0 to 2.0.">1.1</f32ColorCorrection>
+    <f32GlobalBeta description="control gtm strength, range is 0.1 to 0.9.">0.5</f32GlobalBeta>
+    <f32LocalBeta description="control ltm strength, range is 0.1 to 0.9.">0.35</f32LocalBeta>
+    <f32LceBeta description="control lce strength, range is 0.1 to 0.9.">0.5</f32LceBeta>
+    <i32LtmDarkTh description="pixel in gamma space darker than this value is dark area, default value is 25.">35</i32LtmDarkTh>
+    <i32LtmShadowTh description="pixel in gamma space between darkth and shadingth is shadow area">80</i32LtmShadowTh>
+    <i32LtmHighLightTh description="pixel in gamma space brighter than highlight area is highlight area">225</i32LtmHighLightTh>
+    <i32LtmLtmblockNum description="divide the the whole img into n*n blcoks when ltm">20</i32LtmLtmblockNum>
+    <i32LtmLceblockNum description="divide the the whole img into n*n blcoks when lce">10</i32LtmLceblockNum>
+    <i32LtmbinBits>3</i32LtmbinBits>
+    <i32LtmdownScaleLevel>2</i32LtmdownScaleLevel>
+    <f32LtmExtremDarkRatio description="if the dark area percent bigger than the threshold, means the scene is too dark, the value should in [0.9, 1)">0.97</f32LtmExtremDarkRatio>
+    <f32LtmExtremBrightRatio description=" if the highlight area is bigger than the threshold, means the scene is too bright, , the value should in [0.9, 1)">0.97</f32LtmExtremBrightRatio>
+    <LTMControlParam>
+      <SNMode>
+        <Outdoor description="the pixel darkTh will mapping to is cal by slope * darkPercent + bias">
+          <Slope>
+            <DARK>120</DARK>
+            <SHADOW>150</SHADOW>
+            <HIGH_LIGHT>75</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>25</DARK>
+            <SHADOW>20</SHADOW>
+            <HIGH_LIGHT>230</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio description="range is -0.5, 0.5, if dark adjust ratio > 0, the dark area will shift to right, be more bright">
+            <DARK>0.8</DARK>
+            <SHADOW>-0.5</SHADOW>
+            <HIGH_LIGHT>0.3</HIGH_LIGHT>
+            <LAST>0.5</LAST>
+          </AdjustRatio>
+          <range description="limit the anchor point not too big or to small, the darkTh mask mapping between DARK_L and DARK_H">
+            <DARK>
+              <L>20</L>
+              <H>60</H>
+            </DARK>
+            <SHADOW>
+              <L>65</L>
+              <H>90</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>210</L>
+              <H>230</H>
+            </HIGH_LIGHT>
+          </range>
+        </Outdoor>
+        <Indoor>
+          <Slope>
+            <DARK>120</DARK>
+            <SHADOW>200</SHADOW>
+            <HIGH_LIGHT>50</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>30</DARK>
+            <SHADOW>30</SHADOW>
+            <HIGH_LIGHT>230</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.8</DARK>
+            <SHADOW>0.0</SHADOW>
+            <HIGH_LIGHT>0.3</HIGH_LIGHT>
+            <LAST>0.5</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>30</L>
+              <H>75</H>
+            </DARK>
+            <SHADOW>
+              <L>75</L>
+              <H>120</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>215</L>
+              <H>230</H>
+            </HIGH_LIGHT>
+          </range>
+        </Indoor>
+        <f32DarkAreaGamma description="Increase dark area bright, the range is 1.0f to 2.4f, bigger gamma, will get brighter dark area">1.4</f32DarkAreaGamma>
+      </SNMode>
+      <DayTimeMode>
+        <Outdoor>
+          <Slope>
+            <DARK>100</DARK>
+            <SHADOW>80</SHADOW>
+            <HIGH_LIGHT>130</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>30</DARK>
+            <SHADOW>70</SHADOW>
+            <HIGH_LIGHT>225</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.3</DARK>
+            <SHADOW>-0.2</SHADOW>
+            <HIGH_LIGHT>0.2</HIGH_LIGHT>
+            <LAST>0.0</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>25</L>
+              <H>70</H>
+            </DARK>
+            <SHADOW>
+              <L>80</L>
+              <H>100</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>195</L>
+              <H>235</H>
+            </HIGH_LIGHT>
+          </range>
+        </Outdoor>
+        <Indoor>
+          <Slope>
+            <DARK>120</DARK>
+            <SHADOW>130</SHADOW>
+            <HIGH_LIGHT>130</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>30</DARK>
+            <SHADOW>80</SHADOW>
+            <HIGH_LIGHT>225</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.4</DARK>
+            <SHADOW>-0.1</SHADOW>
+            <HIGH_LIGHT>0.2</HIGH_LIGHT>
+            <LAST>0.1</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>30</L>
+              <H>70</H>
+            </DARK>
+            <SHADOW>
+              <L>80</L>
+              <H>110</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>195</L>
+              <H>230</H>
+            </HIGH_LIGHT>
+          </range>
+        </Indoor>
+        <Night>
+          <Slope>
+            <DARK>100</DARK>
+            <SHADOW>100</SHADOW>
+            <HIGH_LIGHT>100</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>35</DARK>
+            <SHADOW>60</SHADOW>
+            <HIGH_LIGHT>230</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.4</DARK>
+            <SHADOW>-0.2</SHADOW>
+            <HIGH_LIGHT>0.2</HIGH_LIGHT>
+            <LAST>0.1</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>20</L>
+              <H>70</H>
+            </DARK>
+            <SHADOW>
+              <L>80</L>
+              <H>110</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>205</L>
+              <H>235</H>
+            </HIGH_LIGHT>
+          </range>
+        </Night>
+        <Sunset>
+          <Slope>
+            <DARK>120</DARK>
+            <SHADOW>80</SHADOW>
+            <HIGH_LIGHT>120</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>25</DARK>
+            <SHADOW>60</SHADOW>
+            <HIGH_LIGHT>230</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.3</DARK>
+            <SHADOW>-0.2</SHADOW>
+            <HIGH_LIGHT>0.20</HIGH_LIGHT>
+            <LAST>-0.1</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>20</L>
+              <H>70</H>
+            </DARK>
+            <SHADOW>
+              <L>80</L>
+              <H>115</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>180</L>
+              <H>235</H>
+            </HIGH_LIGHT>
+          </range>
+        </Sunset>
+        <Market>
+          <Slope>
+            <DARK>100</DARK>
+            <SHADOW>100</SHADOW>
+            <HIGH_LIGHT>70</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>35</DARK>
+            <SHADOW>85</SHADOW>
+            <HIGH_LIGHT>235</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.4</DARK>
+            <SHADOW>-0.1</SHADOW>
+            <HIGH_LIGHT>0.2</HIGH_LIGHT>
+            <LAST>0.1</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>20</L>
+              <H>70</H>
+            </DARK>
+            <SHADOW>
+              <L>95</L>
+              <H>115</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>215</L>
+              <H>235</H>
+            </HIGH_LIGHT>
+          </range>
+        </Market>
+        <f32DarkAreaGamma description="Increase dark area bright, the range is 1.0f to 2.4f, bigger gamma, will get brighter dark area">1.6</f32DarkAreaGamma>
+      </DayTimeMode>
+      <SkyAreaParam>
+        <NightSky>
+          <Slope>
+            <DARK>0</DARK>
+            <SHADOW>0</SHADOW>
+            <HIGH_LIGHT>0</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>30</DARK>
+            <SHADOW>60</SHADOW>
+            <HIGH_LIGHT>25</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.0</DARK>
+            <SHADOW>0.0</SHADOW>
+            <HIGH_LIGHT>0.0</HIGH_LIGHT>
+            <LAST>0.0</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>0</L>
+              <H>0</H>
+            </DARK>
+            <SHADOW>
+              <L>0</L>
+              <H>0</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>0</L>
+              <H>0</H>
+            </HIGH_LIGHT>
+          </range>
+        </NightSky>
+        <DaySky>
+          <Slope>
+            <DARK>0</DARK>
+            <SHADOW>0</SHADOW>
+            <HIGH_LIGHT>0</HIGH_LIGHT>
+          </Slope>
+          <Bias>
+            <DARK>30</DARK>
+            <SHADOW>90</SHADOW>
+            <HIGH_LIGHT>10</HIGH_LIGHT>
+          </Bias>
+          <AdjustRatio>
+            <DARK>0.0</DARK>
+            <SHADOW>0.0</SHADOW>
+            <HIGH_LIGHT>0.0</HIGH_LIGHT>
+            <LAST>0.0</LAST>
+          </AdjustRatio>
+          <range>
+            <DARK>
+              <L>0</L>
+              <H>0</H>
+            </DARK>
+            <SHADOW>
+              <L>0</L>
+              <H>0</H>
+            </SHADOW>
+            <HIGH_LIGHT>
+              <L>0</L>
+              <H>0</H>
+            </HIGH_LIGHT>
+          </range>
+        </DaySky>
+      </SkyAreaParam>
+      <GlareAreParam description="Glare are is defined as over exposure part of the ev0, only need to set bias.">
+        <Slope>
+          <DARK>0</DARK>
+          <SHADOW>0</SHADOW>
+          <HIGH_LIGHT>0</HIGH_LIGHT>
+        </Slope>
+        <Bias>
+          <DARK>20</DARK>
+          <SHADOW>50</SHADOW>
+          <HIGH_LIGHT>130</HIGH_LIGHT>
+        </Bias>
+        <AdjustRatio>
+          <DARK>0.0</DARK>
+          <SHADOW>0.0</SHADOW>
+          <HIGH_LIGHT>0.0</HIGH_LIGHT>
+          <LAST>0.0</LAST>
+        </AdjustRatio>
+        <range>
+          <DARK>
+            <L>0</L>
+            <H>0</H>
+          </DARK>
+          <SHADOW>
+            <L>0</L>
+            <H>0</H>
+          </SHADOW>
+          <HIGH_LIGHT>
+            <L>0</L>
+            <H>0</H>
+          </HIGH_LIGHT>
+        </range>
+      </GlareAreParam>
+      <OriginParam>
+        <Slope>
+          <DARK>0</DARK>
+          <SHADOW>0</SHADOW>
+          <HIGH_LIGHT>0</HIGH_LIGHT>
+        </Slope>
+        <Bias>
+          <DARK>25</DARK>
+          <SHADOW>75</SHADOW>
+          <HIGH_LIGHT>15</HIGH_LIGHT>
+        </Bias>
+        <AdjustRatio>
+          <DARK>0.0</DARK>
+          <SHADOW>0.0</SHADOW>
+          <HIGH_LIGHT>0.0</HIGH_LIGHT>
+          <LAST>0.0</LAST>
+        </AdjustRatio>
+        <range>
+          <DARK>
+            <L>0</L>
+            <H>0</H>
+          </DARK>
+          <SHADOW>
+            <L>0</L>
+            <H>0</H>
+          </SHADOW>
+          <HIGH_LIGHT>
+            <L>0</L>
+            <H>0</H>
+          </HIGH_LIGHT>
+        </range>
+      </OriginParam>
+      <FaceAeParam description="In face scene, need to turn down the backGround brightness to improve contrast.">
+        <Slope>
+          <DARK>0</DARK>
+          <SHADOW>0</SHADOW>
+          <HIGH_LIGHT>0</HIGH_LIGHT>
+        </Slope>
+        <Bias>
+          <DARK>25</DARK>
+          <SHADOW>45</SHADOW>
+          <HIGH_LIGHT>60</HIGH_LIGHT>
+        </Bias>
+        <AdjustRatio>
+          <DARK>0.0</DARK>
+          <SHADOW>0.0</SHADOW>
+          <HIGH_LIGHT>0.0</HIGH_LIGHT>
+          <LAST>0.0</LAST>
+        </AdjustRatio>
+        <range>
+          <DARK>
+            <L>20</L>
+            <H>120</H>
+          </DARK>
+          <SHADOW>
+            <L>70</L>
+            <H>150</H>
+          </SHADOW>
+          <HIGH_LIGHT>
+            <L>180</L>
+            <H>240</H>
+          </HIGH_LIGHT>
+        </range>
+      </FaceAeParam>
+    </LTMControlParam>
+  </Ltm>
+</RAWHDR_ALG_Parameters>

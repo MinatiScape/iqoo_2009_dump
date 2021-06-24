@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AISISRConfig version="1.0.11.1">
+    <!-- 网络相关参数 -->
+    <!-- PD 0.7250 1.8250 2.8350 100.980 101.981 200.tj1000 300.win 400.linux-->
+    <Platform>2</Platform>
+
+    <Overlap>16</Overlap>
+
+    <FaceWorkLensRatio>5</FaceWorkLensRatio>
+
+    <FaceEn use="1">
+        <!--/vendor/camera3rd/nti/FaceEnhanceConfig.xml-->
+        <FaceXML>/vendor/camera3rd/nti/aisr/FaceEnhanceConfig.xml</FaceXML>
+    </FaceEn>
+
+
+    <Raisr use="1">
+        <RaisrModelDir>/vendor/camera3rd/nti/aisr/algoModel</RaisrModelDir>
+        <x1MinISO>99999</x1MinISO>
+        <x2MinISO>99999</x2MinISO>
+        <x5MinISO>99999</x5MinISO>
+        <zoomMax>999</zoomMax>
+    </Raisr>
+
+    <x1RaisrParam>
+        <RaisrX1ISOMin>99999</RaisrX1ISOMin>
+        <RaisrX1zoomMax>0</RaisrX1zoomMax>
+        <RaisrX2X4Enable>0</RaisrX2X4Enable>
+    </x1RaisrParam>
+
+    <x2RaisrParam>
+        <RaisrX1ISOMin>99999</RaisrX1ISOMin>
+        <RaisrX1zoomMax>0</RaisrX1zoomMax>
+        <RaisrX2X4Enable>1</RaisrX2X4Enable>
+    </x2RaisrParam>
+
+    <x5RaisrParam>
+        <RaisrX1ISOMin>99999</RaisrX1ISOMin>
+        <RaisrX1zoomMax>0</RaisrX1zoomMax>
+        <RaisrX2X4Enable>1</RaisrX2X4Enable>
+    </x5RaisrParam>
+
+
+    <sisr1x use="1" space2depth="0" range="0" resi="1" engine="4" device="4">/vendor/camera3rd/nti/aisr/102004004001010009.bin</sisr1x>
+    <sisr1xlowiso use="1" space2depth="0" range="0" resi="1" engine="4" device="4">/vendor/camera3rd/nti/aisr/102004004001010006.bin</sisr1xlowiso>
+    <sisr1xhighiso use="1" space2depth="0" range="0" resi="1" engine="4" device="4">/vendor/camera3rd/nti/aisr/102004004001010010.bin</sisr1xhighiso>
+    <sisr2x use="0" space2depth="0" range="1" resi="1" engine="4" device="4">/vendor/camera3rd/nti/aisr/101001004000011005.bin</sisr2x>
+    <sisr4x use="0" space2depth="0" range="1" resi="1" engine="4" device="4">/vendor/camera3rd/nti/aisr/101001004000012001.bin</sisr4x>
+
+
+    <!-- 1: ISO Thredshold = ISO * DRCGain; 2: ISO Thredshold = ISO -->
+    <MutiDRCGain>0</MutiDRCGain>
+
+    <!-- Model selection based on ISO. ISO min-low: w/o aisr, ISO low-middle: 1xlowiso, ISO middle-high: 1x/2x/4x, ISO high-max: 1xhighiso. -->
+    <x1ISOParam>
+        <low>0</low>
+        <middle>1600</middle>
+        <high>99999</high>
+    </x1ISOParam>
+
+    <x2ISOParam>
+        <low>0</low>
+        <middle>99999</middle>
+        <high>99999</high>
+    </x2ISOParam>
+
+    <x5ISOParam>
+        <low>0</low>
+        <middle>0</middle>
+        <high>1600</high>
+    </x5ISOParam>
+
+
+    <!-- Model selection based on digitalZoom. -->
+    <x1ZoomParam>
+        <sisr2x>100</sisr2x>
+        <sisr4x>100</sisr4x>
+    </x1ZoomParam>
+
+    <x2ZoomParam>
+        <sisr2x>100</sisr2x>
+        <sisr4x>100</sisr4x>
+    </x2ZoomParam>
+
+    <x5ZoomParam>
+        <sisr2x>100</sisr2x>
+        <sisr4x>100</sisr4x>
+    </x5ZoomParam>
+
+
+    <!-- Sharp patameters. 
+    DigitalZoom min-zoomMin: (ISO min-low: low, ISO low-max: 0), 
+    DigitalZoom zoomMin-max: (ISO min-low: low, ISO low-high: middle, ISO high-max: high). -->
+    <x1SharpParam>
+        <low>0</low>
+        <middle>0</middle>
+        <high>0</high>
+        <zoomMin>1</zoomMin>
+    </x1SharpParam>
+
+    <x2SharpParam>
+        <low>0.3</low>
+        <middle>0.45</middle>
+        <high>0.6</high>
+        <zoomMin>1</zoomMin>
+    </x2SharpParam>
+
+    <x5SharpParam>
+        <low>0</low>
+        <middle>0</middle>
+        <high>0</high>
+        <zoomMin>1</zoomMin>
+    </x5SharpParam>
+
+    <!-- final sharp parameter = x1SharpParam/x2SharpParam/x5SharpParam * SharpStrength -->
+    <SharpFunc use="1">
+        <SharpStrength>1</SharpStrength>
+        <SharpenThreshold>0</SharpenThreshold>
+    </SharpFunc>
+
+
+    <!-- Noise-Leak patameters(0-1). The higher value, the more noise will leak. 
+    DigitalZoom min-zoomMax: (ISO low-middle: low, ISO middle-high: middle, ISO high-max: high), 
+    DigitalZoom zoomMax-max: 1. -->
+    <x1NoiseLeakParam>
+        <low>1</low>
+        <middle>0.2</middle>
+        <high>0.2</high>
+        <zoomMax>100</zoomMax>
+    </x1NoiseLeakParam>
+
+    <x2NoiseLeakParam>
+        <low>1</low>
+        <middle>1</middle>
+        <high>1</high>
+        <zoomMax>100</zoomMax>
+    </x2NoiseLeakParam>
+
+    <x5NoiseLeakParam>
+        <low>1</low>
+        <middle>1</middle>
+        <high>1</high>
+        <zoomMax>100</zoomMax>
+    </x5NoiseLeakParam>
+
+</AISISRConfig>

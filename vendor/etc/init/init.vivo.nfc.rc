@@ -1,0 +1,18 @@
+###############################################################
+# nfc launcher
+# NOTE: This file name should sort before nfc hwbinder
+# start rc since post-fs-data must launcher before the sub dir
+# to create.
+#
+# The trigger MUST before nfc hwbinder service start.
+
+on early-fs
+	start vivo-nfc-sh
+
+# All hal should start after this service. And it will set persist.sys.fptype and
+# sys.nfc.boot which will enable specific nfc hal service.
+service vivo-nfc-sh /system/vendor/bin/sh /vendor/bin/init.vivo.nfc.sh
+    class early_hal
+    disabled
+    user root
+    oneshot

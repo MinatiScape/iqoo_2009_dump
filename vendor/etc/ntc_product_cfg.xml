@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ntc_auto_test>
+
+    <iteminfo name = "BATT_THERM" operation="read"  path="/sys/class/power_supply/battery/temp" value_deal="/10" value_type="%.1f"/>
+	<iteminfo name = "BOARD_THERM" operation="read" path="/sys/class/cms_class/primary_board_temp" value_deal="/10" value_type="%.1f"/>
+
+	<iteminfo name = "USB_CON_THERM" operation="read"  path="/sys/class/stm32_debug/usb_conn_temp" value_deal="/10" value_type="%.1f"/>
+	<iteminfo name = "USB_CON_1_THERM" operation="read"  path="/sys/class/stm32_debug/usb_conn_temp1" value_deal="/10" value_type="%.1f"/>
+	<iteminfo name = "BAT_BOARD_THERM" operation="read"  path="/sys/class/stm32_debug/bat_temp" value_deal="/10" value_type="%.1f"/>
+	<iteminfo name = "5G_PA_THERM" operation="read"  basic_path="/sys/class/thermal/thermal_zone%d"  if_type = "modem-mmw-pa2-usr"  value_deal="/1000"	value_type="%.1f" repeat-times="6"/>
+	<iteminfo name = "WIFI_PA_THERM" operation="read"  basic_path="/sys/class/thermal/thermal_zone%d"  if_type = "modem-mmw-pa3-usr"  value_deal="/1000"	value_type="%.1f" repeat-times="6"/>
+	<iteminfo name = "BAT_BTB_THERM" operation="read" path="/sys/class/stm32_debug/bat_conn_temp" value_deal="/10"  value_type="%.1f"/>
+
+	<Command name = "AT+BK_PWR_NTC=1,1">
+		<item name = "BATT_THERM"/>
+		<item name = "BOARD_THERM"/>
+	</Command>
+	<Command name = "AT+BK_PWR_NTC=1,2" cache_file="/cache/recovery/last_ntc_temperature">
+		<item name = "USB_CON_THERM"/>
+		<item name = "USB_CON_1_THERM"/>
+		<item name = "BAT_BOARD_THERM"/>
+		<item name = "5G_PA_THERM"/>
+		<item name = "WIFI_PA_THERM"/>
+		<item name = "BAT_BTB_THERM"/>
+	</Command>
+</ntc_auto_test>

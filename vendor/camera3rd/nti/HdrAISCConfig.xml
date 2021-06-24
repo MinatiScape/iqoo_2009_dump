@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HdrAISCConfig version="0.0.1">
+	<!-- 网络相关参数 -->
+	<!-- 运行设备 0.cpu 1.gpu-->
+    <Devices>0</Devices>
+	<ThreadNum>1</ThreadNum>
+	<NeedSoftmax>0</NeedSoftmax>
+	
+	<!-- 模型路径 -->
+	<ModelPath>/vendor/camera3rd/nti/pj_hdrsc_light_2_t6_1_nobn_sign.bin</ModelPath>
+
+	<!-- 异步运行 0.同步 1.异步 -->
+	<AsyncMode>1</AsyncMode>
+	<AsyncFreq>3</AsyncFreq>
+
+	<!-- 日志等级 0.FATAL 4.Debug -->
+	<DebugLevel>4</DebugLevel>
+
+</HdrAISCConfig>

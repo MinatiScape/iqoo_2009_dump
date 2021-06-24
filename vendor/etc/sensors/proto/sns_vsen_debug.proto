@@ -1,0 +1,19 @@
+// @file sns_vsen_debug.proto
+//
+// Defines standard message types for the debug message
+//
+// Copyright (c) 2020 vivo Technologies, Inc.
+// All Rights Reserved.
+
+syntax = "proto2";
+import "nanopb.proto";
+import "sns_std_sensor.proto";
+
+enum sns_vsen_debug_msgid
+{
+  option (nanopb_enumopt).long_names = false;
+
+  // Uses message: sns_std_sensor_event
+  // Purpose: A debug data event from a Sensor, vsen add
+  SNS_STD_SENSOR_MSGID_SNS_STD_SENSOR_DEBUG_EVENT = 1032;
+}

@@ -1,0 +1,29 @@
+// @file sns_maglib_sensor.proto
+//
+// Defines standard message types for the ANGLE_JUDGE
+//
+// Copyright (c) 2017 Vivo, Inc.
+// All Rights Reserved.
+// Confidential and Proprietary - Vivo, Inc.
+syntax = "proto2";
+import "nanopb.proto";
+
+enum sns_maglib_sensor_msgid
+{
+  option (nanopb_enumopt).long_names = false;
+  VIVO_MSGID_SNS_SENSOR_MAGLIB_MAGPARA_CONFIG =  521;
+  VIVO_MSGID_SNS_SENSOR_MAGLIB_SOFTIRON_EVENT =  1529;
+}
+
+message sns_maglib_sensor_magpara
+{
+  // maglib_sensor mag parameters
+  repeated float maglib_sensor = 1 [(nanopb).max_count = 10];
+  required uint32 vendor = 2;
+}
+
+message sns_maglib_sensor_softiron
+{
+  // maglib_sensor mag parameters
+  repeated float data = 1 [(nanopb).max_count = 11];
+}

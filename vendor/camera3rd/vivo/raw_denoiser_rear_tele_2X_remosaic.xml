@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rawDenoiserConfig>
+  <noiseProfile>
+      <a0>0.0008348733</a0>
+      <a1>0.0182043494</a1>
+      <b0>0.0000023265</b0>
+      <b1>-0.0001532862</b1>
+  </noiseProfile>
+  <TotalLevNum>11</TotalLevNum>
+ <faceEnable>1</faceEnable>
+  <waterMarkEnable>0</waterMarkEnable>
+  <scaleHigFreq description="high freq denoise strength, higer value stronger noise reduction.">1.0</scaleHigFreq>
+  <scaleMidFreq description="mid freq denoise strength, higer value stronger noise reduction.">1.0</scaleMidFreq>
+  <scaleLowFreq description="low freq denoise strength, higer value stronger noise reduction.">1.0</scaleLowFreq>
+  <bayerSharpenEnable description="1 - enable bayer sharpen. 0 - disable bayer sharpen.">1</bayerSharpenEnable>
+  <maxValidFrameBlendEnable>0</maxValidFrameBlendEnable>
+<sfnrThreshISO description="bypass sfnr threshhold: higher than sfnrThreshISO, then bypass sfnr">10000</sfnrThreshISO>
+  <highResolutionThresh desicription="high resolution threshold. use block processing to reduce memory usage when image resolution is higher than the threshold. unit: MegaPixel">24</highResolutionThresh>
+  <cpuInfo>
+    <cpuAinrCoreIdxStart>0</cpuAinrCoreIdxStart>
+    <cpuAinrCoreIdxEnd>3</cpuAinrCoreIdxEnd>
+	<cpuRawnrCoreIdxStart>4</cpuRawnrCoreIdxStart>
+    <cpuRawnrCoreIdxEnd>7</cpuRawnrCoreIdxEnd>
+    <cpuCoreNum>8</cpuCoreNum>
+  </cpuInfo>
+  <AINRConfig>
+      <AINREnable description="1 - enable AINR, 0 - disable AINR.">0</AINREnable>
+      <xmlPath description="AINR xml parameters path">AIDenoiseConfigMidCamera.xml</xmlPath>
+      <!--<modelDir description="AINR model directory. Models are specified in AINR xml parameter file.">/vendor/camera3rd/vivo</modelDir>-->
+      <rawnrBlockParallel description="block parallel processing with rawnr. 1 - enable, 0 - disable.">1</rawnrBlockParallel>
+      <drcGainForThresh description="1 - AINRThreshISO = shortGain*drcGain*50, 0 - AINRThreshISO = shortGain*50">0</drcGainForThresh>
+      <AINRThreshISO description="bypass ainr threshhold: lower than AINRThreshISO, then bypass ainr">0</AINRThreshISO>
+  </AINRConfig>
+  <bpc>
+      <bpcHotFactor description="specifies the treshold for a hot pixel value to be selected for correction. A higher value results in fewer pixels detected as bad pixels.">3.0</bpcHotFactor>
+      <bpcOffsetMax description="specifies the offset threshold for a hot pixel detection. A higher value results in fewer pixels detected as bad pixels.">3</bpcOffsetMax>
+      <bpcColdFactor description="specifies the treshold for a cold pixel value to be selected for correction. A lower value results in fewer pixels detected as bad pixels.">0.333</bpcColdFactor>
+      <bpcOffsetMin description="specifies the offset threshold for a cold pixel detection. A higher value results in fewer pixels detected as bad pixels.">2</bpcOffsetMin>
+      <highlightDetectThresh description="A smaller value means that fewer pixels will be reset as 'highlight pixel' after correction.">1.2</highlightDetectThresh>
+      <highlightValueThresh description="only those pixels with value higher than the threshold can be highlight pixel.">64</highlightValueThresh>
+  </bpc>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">50</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is less than the certain amount of the reference frame will not be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.7</blendRatio><!--1.4-->
+      <faceHighBlendRatio description="high freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.4</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">1.0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.8</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.0</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+       <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>1.0</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">100</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.64</blendRatio><!--1.35-->
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">1.0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.95</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.15</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>1.0</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">200</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.6</blendRatio><!--1.2-->
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0.6</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.85</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.25</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+       <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>1.0</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">400</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.56</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.4</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.5</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0.35</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.8</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.4</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>1.0</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">800</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.54</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.3</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.3</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0.35</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">2.15</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.55</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>0.6</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">1200</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.965</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.43</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.5</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.6</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0.1</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">2.0</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.8</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.1</lowFreqSimilarityThr>
+       <higFreqAdjFactor>0.9</higFreqAdjFactor>
+      <lowFreqAdjFactor>0.7</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">2000</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.90</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.43</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.4</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.5</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.85</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.6</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.1</lowFreqSimilarityThr>
+      <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>0.6</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">2400</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.90</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.42</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.3</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.6</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.85</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.6</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+       <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>0.6</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">3200</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.90</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.35</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.6</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.85</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.6</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>0.8</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">4000</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.90</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.3</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.6</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.85</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.6</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <higFreqAdjFactor>1.0</higFreqAdjFactor>
+      <lowFreqAdjFactor>0.8</lowFreqAdjFactor>
+  </levConfigData>
+  <levConfigData>
+      <rawISO description="rawISO = shortGain * 50.">5000</rawISO>
+      <filterStrength description="denoise strength, which scales the noise profile lut.">1.0</filterStrength>
+      <sharpnessThr description="if the frame whose sharpness is greater than the certain amount of the reference frame will be used for multi-frame denoise.">0.90</sharpnessThr>
+      <maxNotUsedFrame description="specifies the maximum frames which will not be used when their frame sharpness are not satisfied.">2</maxNotUsedFrame>
+      <blendRatio description="blending factor between original pixel and denoised pixel. Lower value = softer image, Higher value = more noisy image.">1.28</blendRatio>
+      <faceHighBlendRatio description="blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.1</faceHighBlendRatio>
+      <faceMiddleLowBlendRatio description="middle low freq blending factor between original pixel and denoised pixel in face area. Lower value = softer image, Higher value = more noisy image.">1.6</faceMiddleLowBlendRatio>
+      <grainAdderRatio description="controls the amount of grain added to the image. Lower value = less grain, Higher value = more grain.">0</grainAdderRatio>
+      <darkControl description="controls the denoise strength of the dark region. Lower value = weak noise reduction, Higher value = stronger noise reduction.">1.0</darkControl>
+      <higFreqSimilarityThr description="high freq similarity threshold, higer value stronger noise reduction.">1.85</higFreqSimilarityThr>
+      <midFreqSimilarityThr description="mid freq similarity threshold, higer value stronger noise reduction.">1.6</midFreqSimilarityThr>
+      <lowFreqSimilarityThr description="low freq similarity threshold, higer value stronger noise reduction.">1.0</lowFreqSimilarityThr>
+      <higFreqAdjFactor>0.9</higFreqAdjFactor>
+      <lowFreqAdjFactor>0.9</lowFreqAdjFactor>
+  </levConfigData>
+</rawDenoiserConfig>

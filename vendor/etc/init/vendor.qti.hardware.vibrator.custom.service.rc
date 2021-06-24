@@ -1,0 +1,4 @@
+service vendor.qti.vibrator.custom /vendor/bin/hw/vendor.qti.hardware.vibrator.custom.service
+    class hal
+    user system
+    group system input

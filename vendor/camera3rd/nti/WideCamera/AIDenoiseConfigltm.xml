@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AiDenoiseConfig version="0.0.5">
+    <!-- 是否根据输入数据计算先验方差。1：是； 0：否，接受外部传入方差 -->
+    <calculateStd>0</calculateStd>
+    <!-- 图像的bit数，这个配置仅在testbed自测AINR时使用。集成后由外部参数决定输入bit数 -->
+    <dumpAIDenoiseRaw>1</dumpAIDenoiseRaw>
+    <BitWidth>14</BitWidth>
+    <Platform>0</Platform>
+    <Frame>qnn</Frame>
+    <Device>3</Device>
+    <!-- 存放模型的路径 -->
+    <DenoiserBranch>
+        <ISOstart>0</ISOstart>
+        <ISOend>15000</ISOend>
+        <ExpTimeStart>0</ExpTimeStart>
+        <ExpTimeEnd>1000</ExpTimeEnd>
+        <!-- pattern 0: R1G1G2B1, 1 : G1R1B2G2, 2 : B1G2G1R1, 3 : G1B1R2G2-->
+        <Pattern>3</Pattern>
+        <!-- 黑电平基准，这个默认为10bit下64，不通位宽下的图像会自动换算 -->
+        <BlackLevel>0</BlackLevel>
+        <!-- sensortype: 0==> PD2011 1==>PD2001 -->
+        <SensorType>0</SensorType>
+        <!-- ModelName 当前ISO段模型名字 -->
+        <ModelName>nnltmx10qnn.bin</ModelName>
+        <!-- 网络训练时/实际Sensor的方差校准参数  pd2049 IMX598Main 堆棧盲去噪不需噪聲水平-->
+        <NoiseLevelConfig>
+            <A0>0.0</A0>
+            <A1>0.0</A1>
+            <B0>0.0</B0>
+            <B1>0.0</B1>
+            <B2>0.0</B2>
+            <!-- 网络训练时用于校准方差估计的参数，根据网络不同是个固定值，请勿修改 -->
+            <Scale>2000</Scale>
+        </NoiseLevelConfig>
+        <nnev>
+            <!--t8 qnn 量化参数-->
+            <RunWidth>560</RunWidth>
+            <RunHegiht>560</RunHegiht>
+            <InputChannel>1</InputChannel>
+            <OutputChannel>1</OutputChannel>
+            <RunPattern>3</RunPattern>
+            <OutputMin>-0.2648817002773285</OutputMin>
+            <OutputMax>0.27394166588783264</OutputMax>
+        </nnev>
+        <OverLap>16</OverLap>
+        <DefaultOverlap>16</DefaultOverlap>
+        <ThreadNum>4</ThreadNum>
+        <!-- 以下配置仅配置EV0生效 -->
+        <!-- 用来控制噪声的调试 -->
+        <!-- 方差估计将会自动通过以下公式计算： var_input = var * scale * evscale + evbias -->
+        <!-- 例如evscale=0.9，此时方差估计变小，则会放出更多的噪声，若evscale=1.1，则方差估计变大，会导致降噪加强 -->
+        <EvScale>1.0</EvScale>
+        <EvBias>0</EvBias>
+        <!-- 通过控制residule的维度来控制噪声放出的强弱，考虑原降噪公式： clean_image = observed_image - ResScale * noise -->
+        <!-- AI网络估计的是noise这个值，所以当ResScale不等于1.0时，噪声都会呈现均匀增加 -->
+        <ResScale>1.0</ResScale>
+        <!-- 以下参数控制是否进入极度暗区的特殊模式 -->
+        <!-- 该模式必须大于该ISO阈值 -->
+        <M2PixelAvg>0.2</M2PixelAvg>
+        <!-- 暗区的阈值定义 -->
+        <M2BlackAvg>0.025</M2BlackAvg>
+        <!-- 暗区占比大于xx，按0-1来计算 -->
+        <M2BlackRatio>1.0</M2BlackRatio>
+        <!-- 打开水印调试 -->
+        <M2Watermark>0</M2Watermark>
+        <!-- 打开pad -->
+        <ReflectPad>1</ReflectPad>
+        <!-- 打开GIC -->
+        <GIC>0</GIC>
+        <!-- 打开去除坏点 -->
+        <deBadPoint>0</deBadPoint>
+        <!-- 坏点去除阈值 -->
+        <badPointThreshold>30</badPointThreshold>
+    </DenoiserBranch>
+</AiDenoiseConfig>

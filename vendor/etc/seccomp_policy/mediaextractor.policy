@@ -1,0 +1,3 @@
+# vivo specific syscalls
+# extension of services/mediaextractor/seccomp_policy/mediaextractor-arm.policy
+set_tid_address: 1

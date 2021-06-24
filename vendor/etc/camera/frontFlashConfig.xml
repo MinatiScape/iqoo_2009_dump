@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--========================================================================-->
+<!-- Copyright (c) 2017 Qualcomm Technologies, Inc.                         -->
+<!-- All Rights Reserved.                                                   -->
+<!-- Confidential and Proprietary - Qualcomm Technologies, Inc.             -->
+<!--========================================================================-->
+<frontFlashConfig
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../cdk/sensor/camxflashdriver.xsd">
+  <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+   <!--容许红色色偏的阈值，默认为 2.0-->
+   <redTh>3.0</redTh>
+
+   <!--容许蓝色色偏的阈值，默认为 3.0-->
+   <blueTh>3.0</blueTh>
+
+   <!--容许绿色色偏的阈值，默认为 3.0-->
+   <greenTh>3.0</greenTh>
+
+   <!--容许黄色色偏的阈值，默认为 3.5-->
+   <yellowTh>3.5</yellowTh>
+
+   <!--暗角参数,数值越小范围越大，在0.45~0.65之间，默认值设置为0.45-->
+   <shading>0.45</shading>
+
+   <!--色偏参数,数值越大范围越大，在0.05~0.08之间，默认值设置为0.07-->
+   <colorDiff>0.07</colorDiff>
+
+   <!--亮度的阈值，默认180-->
+   <brightTh>130</brightTh>
+ 
+</frontFlashConfig>

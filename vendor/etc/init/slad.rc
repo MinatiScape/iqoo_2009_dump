@@ -1,0 +1,16 @@
+service slad /vendor/bin/slad
+    interface vendor.vivo.hardware.slad@1.0::ISlad default
+    # restarted if hwservicemanager dies
+    # would also cause the hal to start early during boot if oneshot wasn't set
+    class hal
+    # will not be restarted if it exits until it is requested to be restarted
+    oneshot
+    # will only be started when requested
+    disabled
+
+on property:persist.vivo.sla.enabled=1
+    start slad
+on property:persist.vivo.sla.enabled=0
+    stop slad
+
+on post-fs-data

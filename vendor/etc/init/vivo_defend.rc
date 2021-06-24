@@ -1,0 +1,18 @@
+on property:sys.user.0.ce_available=true
+    setprop vendor.property.ce_available ${sys.user.0.ce_available}
+
+on post-fs
+    setprop vendor.serialno ${ro.serialno}
+    setprop vendor.oem.name ${ro.vivo.oem.name}
+    setprop vendor.vgc.cust.name ${ro.vgc.cust.name}
+    setprop ro.vendor.defend.gmsversion ${ro.com.google.gmsversion}
+    start vivo_defend
+
+#vivo lizonglin add start
+service vivo_defend /vendor/bin/vivo_defend 
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+#vivo lizonglin add end

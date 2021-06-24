@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+/* Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above
+ *       copyright notice, this list of conditions and the following
+ *       disclaimer in the documentation and/or other materials provided
+ *       with the distribution.
+ *     * Neither the name of The Linux Foundation nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ * BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+ * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+-->
+<HintConfigs>
+    <Powerhint>
+        <!--video encode 30 fps-->
+        <Config
+            Id="0x00001203" Enable="true" Target="lahaina"
+            Resources="" />
+
+        <!--sustained performance-->
+        <Config
+            Id="0x00001206" Enable="true" Target="lahaina"
+            Resources=""/>
+        <!--vr mode-->
+        <Config
+            Id="0x00001207" Enable="true" Target="lahaina"
+            Resources=""/>
+
+        <!--vr mode sustained performance-->
+        <Config
+            Id="0x00001301" Enable="true" Target="lahaina"
+            Resources=""/>
+
+        <!-- qvr level cpu1 gpu1 -->
+        <!-- B CPU - Cluster min freq ~.864 Ghz -->
+        <!-- B CPU - Cluster max freq ~.2.016 Ghz -->
+        <!-- L CPU - Cluster min freq ~.576 Ghz -->
+        <!-- L CPU - Cluster max freq ~1.267 Ghz -->
+        <!-- P CPU - PRIME CPU min freq ~.941 Ghz-->
+        <!-- P CPU - PRIME CPU max freq ~2.054Ghz -->
+        <!-- GPU - min pwrlevel 5 (freq 215 Mhz) -->
+        <!-- GPU - max pwrlevel 0 (freq 600 Mhz) -->
+        <!-- Min Big CPUs 3 -->
+        <!-- Min Prime CPUs 1 -->
+        <!-- Idefinite Duration -->
+        <Config
+            Id="0x0000130A" Enable="true" Target="lahaina" Timeout="0"
+            Resources="0x40800000, 0x360, 0x40804000, 0x7E0, 0x40800100, 0x240,
+            0x40804100, 0x4F3, 0x40800200, 0x3AD, 0x40804200, 0x806, 0x42804000, 0x3,
+            0x42808000, 0x0, 0x41000000, 0x3, 0x41000200, 0x1"/>
+
+		<!-- camera preview front -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001330" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!--camera preview-->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 55 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 65 -->
+        <!--MPCTLV3_MAX_FREQ_CLUSTER_BIG_CORE_0 - 1766MHz -->
+        <Config
+            Id="0x00001331" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64,
+			0x40C20000, 0x37, 0x40C1C000, 0x41, 0x41444100,0x0,0x41444000,0x0,0x41444200,0x0,0x43434000,0x1,0x43438000,0x1,
+            0x40C68100,0xFFFFFFF0,0x40C68110,0xFFFFFFF0,0x40C68120,0xFFFFFFF0,0x40C68130,0xFFFFFFF0,0x40804030,0x6E6"/>
+
+        <!-- camera 60fps -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--PREDICTIVE_LOAD_CLUSTER_LITTLE -->
+        <!--PREDICTIVE_LOAD_CLUSTER_BIG -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 1 -->
+        <!--CPU0-DDR MEM LAT - Set ratio_ceil 1 -->
+        <!--CPU4-LLC MEM LAT - Set ratio_ceil 1 -->
+        <!--CPU0-DDR MEM LAT - Set ratio_ceil 1 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--CPU-LLC BWMON - Set sample_ms 20 -->
+        <!--CPU-LLC BWMON - Set io_percent 80 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set sample_ms 20 -->
+        <!--LLC-DDR BWMON - Set io_percent 80 -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 30 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 40 -->
+        <Config
+            Id="0x00001332" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,0x40C68130, 0xFFFFFFF6,
+            0x41444100, 0x0, 0x41444000, 0x0, 0x43420000, 0x1, 0x43434000, 0x1, 0x43424000, 0x1, 0x43438000, 0x1,
+            0x41838000, 0x0, 0x4183C000, 0x14, 0x41834000, 0x50, 0x43024000, 0x0, 0x43034000, 0x14, 0x43020000, 0x50,
+            0x40C20000, 0x1E, 0x40C1C000, 0x28"/>
+
+        <!-- camera HFR -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+	<!--MPCTLV3_SCHED_DOWNMIGRATE - 55 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 65 -->
+        <Config
+            Id="0x00001333" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6, 0x4300C000, 0xA ,0x41820000, 0xA, 0x40C20000, 0x32, 0x40C1C000, 0x41"/>
+
+        <!-- camera 480fps - HFR -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+		<!--MPCTLV3_SCHED_DOWNMIGRATE - 10 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 20 -->
+		<!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1708MHz -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_BIG_CORE_0 - 1708MHz -->
+        <Config
+            Id="0x00001334" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6, 0x4300C000, 0xA ,0x41820000, 0xA, 0x40C20000, 0xA, 0x40C1C000, 0x14, 0x40800100, 0x6AC, 0x40800000, 0x6AC"/>
+
+        <!-- camera video recording 4k -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 45 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 55 -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1516MHz -->
+        <Config
+            Id="0x00001335" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64,
+			0x40C20000, 0x2D, 0x40C1C000, 0x37, 0x40800100, 0x5EC"/>
+			
+        <!-- camera video recording 1080p -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001336" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera video recording 1080p front -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001337" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera video recording 720p -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001338" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera video recording 720p front -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001339" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera preivew protrait  -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001341" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera preivew protrait front  -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001342" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera 240fps - HFR -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+	<!--MPCTLV3_SCHED_DOWNMIGRATE - Set 55 -->
+	<!--MPCTLV3_SCHED_UPMIGRATE - Set 65 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+		<!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1708MHz -->
+        <Config
+            Id="0x00001345" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6, 0x40C20000, 0x32, 0x40C1C000, 0x41, 0x4300C000, 0xA ,0x41820000, 0xA,0x40800100, 0x6AC"/>
+
+        <!-- camera video recording 8k -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 35 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 45 -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1708MHz -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_BIG_CORE_0 - 1286MHz -->
+        <Config
+            Id="0x00001346" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x40C20000, 0x23, 0x40C1C000, 0x2D, 0x40800100, 0x6AC, 0x40800000, 0x506"/>
+
+        <!-- camera preview superns front -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001349" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!--camera preview superns-->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 65 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 55 -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1334MHz -->
+        <Config
+            Id="0x00001350" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64,
+			0x40C20000, 0x41, 0x40C1C000, 0x37, 0x40800100, 0x536"/>
+
+        <!-- camera preview remosaic -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001351" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera preview pano -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 35 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 45 -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1516MHz -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_BIG_CORE_0 - 1286MHz -->
+        <Config
+            Id="0x00001352" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x43420000, 0x64, 0x40C20000, 0x23, 0x40C1C000, 0x2D, 0x40800100, 0x5EC, 0x40800000, 0x506"/>
+
+        <!-- camera preview livephoto -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001353" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera preview timelapse -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001354" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera preview pro -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001355" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera preview funvideo -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <!--MPCTLV3_SCHED_BOOST - Set 2 -->
+        <!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1248MHz -->
+        <Config
+            Id="0x00001356" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64,
+			0x40C00000, 0x2, 0x40800100, 0x4E0"/>
+
+        <!-- camera preview ARStickers -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <Config
+            Id="0x00001357" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0xA ,0x41820000, 0xA, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64"/>
+
+        <!-- camera preview pro video -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--L CPU - Disable schedutil PL -->
+        <!--L CPU - Set hispeed load 99 -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+        <!--LLC-DDR BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set io_percent 100 -->
+        <!--CPU-LLC BWMON - Set hyst_length 0 -->
+        <!--LLC-DDR BWMON - Set hyst_length 0 -->
+        <!--CPU0-LLC MEM LAT - Set ratio_ceil 100 -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 30 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 50 -->
+        <Config
+            Id="0x00001359" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6,0x41444100, 0, 0x41440100, 0x63,
+            0x4300C000, 0x1 ,0x41820000, 0x1, 0x43004000, 0x64 ,0x41808000, 0x64, 0x4180C000, 0, 0x43008000, 0, 0x43420000, 0x64, 0x40C20000, 0x1E, 0x40C1C000, 0x32"/>
+
+        <!-- camera pro video - HFR -->
+        <!--L CPU CORE 0 SCHED LOAD BOOST -->
+        <!--L CPU CORE 1 SCHED LOAD BOOST -->
+        <!--L CPU CORE 2 SCHED LOAD BOOST -->
+        <!--L CPU CORE 3 SCHED LOAD BOOST -->
+        <!--LLC-DDR BWMON - Set sample_ms 10 -->
+        <!--CPU-LLC BWMON - Set sample_ms 10 -->
+		<!--MPCTLV3_MIN_FREQ_CLUSTER_LITTLE_CORE_0 - 1708MHz -->
+        <!--MPCTLV3_SCHED_DOWNMIGRATE - 30 -->
+        <!--MPCTLV3_SCHED_UPMIGRATE - 50 -->
+        <Config
+            Id="0x00001360" Enable="true" Timeout="0" Target="lahaina"
+            Resources="0x40C68100, 0xFFFFFFF6, 0x40C68110, 0xFFFFFFF6, 0x40C68120, 0xFFFFFFF6,
+            0x40C68130, 0xFFFFFFF6, 0x4300C000, 0xA ,0x41820000, 0xA,0x40800100, 0x6AC, 0x40C20000, 0x1E, 0x40C1C000, 0x32"/>
+
+    </Powerhint>
+</HintConfigs>

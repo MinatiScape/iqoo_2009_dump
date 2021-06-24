@@ -1,0 +1,777 @@
+{
+    "version":
+    {
+        "majorVersion": 1,
+        "minorVersion": 6,
+        "releaseVersion": 10,
+        "tuningVersion": 1
+    },
+    
+    "debug":
+    {
+        "comment_debuglevel": "0:error/init, 1:key, 2:info, 3:debug",
+        "debuglevel": 3,
+
+        "comment_watermarker": "0:disable, >=1:enable",
+        "watermarkerEn": 0,
+        
+        "comment_bypass": "0:disable but create handle, >=1:enable",
+        "bypassEn": 0,
+        
+        "comment_dump": "0:disable, >=1:enable",
+        "dumpEn": 0
+    },
+    
+
+    "auxgainknee":
+    {
+        "isoKneeNum": 9,
+        "isoKnee": [50, 100, 200, 400, 800, 1600, 3200, 6400, 12800],
+
+        "drcGainKneeNum": 4,
+        "drcGainKnee": [2, 4, 5, 6],
+
+        "radialKneeNum": 4,
+        "comment_radialgainknee": "ralated to iso",
+        "radialGainKnee":
+        [
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75,
+            1.0, 1.0, 1.4, 1.75
+        ],
+        
+        "lumaKneeNum": 4,
+        "lumaKnee": [0.25, 0.375, 0.5, 0.75],
+        
+        "burstcountKneeNum": 2,
+        "burstcountKnee": [5, 8]
+    },
+
+    "alignment": 
+    {
+        "comment_alignmethod": "0:opticalflow_method, 1:multi-H_method, 2:blockmatch+opticalflow_method, 3:homography_method",
+        "alignmethod": 0,
+        
+        "comment_opticalflow_method": "0: farneback, 1:l1TV, 2:nti_dis, 3:l1_dis, 4:epic_flow",
+        "opticalflowmethod": 2,
+
+        "comment_finestScale": "1 / finestScale is the begin scale for alignment ",
+        "finestScale": 2,
+
+        "epsilon": 1.0,
+        
+        "comment_global_alignment": "0:off, 1:on",
+        "globalAlignment": 0,
+
+        "disflow":
+        {
+            "comment_dis_finest_scale":"finest layer of pyramid in dis optical flow, suggest to be default",
+            "disfinestscale":0,
+            
+            "comment_dis_patch_size":"patch size in inverse search, suggest to be default",
+            "dispatchsize":8,
+            
+            "comment_dis_patch_stride":"patch stride in inverse search, suggest to be default in order to be consistent with overlapratio in transformdomainfilter",
+            "dispatchstrideknee": [4, 8],
+            
+            "comment_dis_gradient_descent_iterations":"iterations in inverse search processing",
+            "disiteration":24,
+            
+            "comment_dis_variational_refinement_iterations":"refinement interations, suggest to be default",
+            "disrefinementiteration":0,
+            
+            "comment_dis_use_spatial_propagation":"whether use spatial propagation in inverse search, 0:off, 1:on, suggest to be default",
+            "dispropagation":1
+        },
+
+        "mismatch":
+        {
+            "comment_mismatch": "using mismatch map to guide multi frame merge, 0:0ff, 1:on",
+            "mismatchEnable":1,
+            
+            "comment_mismatchC":"ralated to noise level,range[0.1,5]",
+            "mismatchC": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            
+            "comment_mismatchMax":"range[0,1]",
+            "mismatchMax": [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+        }
+    },
+    
+    "burstdenoise": 
+    {
+        "comment_burstdenoisemethod": "0:bypass, 1::forFBA, 2:for wbdct",
+        "burstdenoisemethod": 2,
+
+        "comment_temporaldenoisemethod": "0: bypass, 1: rangefilter",
+        "temporaldenoisemethod": 1
+    },
+
+    "chromadenoise": 
+    {
+        "comment_temporallumafilterEnable": "0:disable, >=1:enable",
+        "temporallumafilterEn": 0,
+        
+        "comment_temporalchromafiltermethod": "0:bypass, 1:rangefilter, 2:nlm, 3:ave, 4:avepro",
+        "temporalchromafiltermethod": 2,
+        "comment_spatialchromafiltermethod": "0:bypass, 1:median, 2:guide, 3:threshold, 4:morphology, 6:joint",
+        "spatialchromafiltermethod": 6,
+        
+        "comment_postditherEnable": "0:disable, >=1:enable",
+        "postditherEn": 0,
+        
+        "comment_ditherthrehold":"0~3, ralated to imgvalue",
+        "ditherthreholdchroma": [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        
+        "comment_rangeradius": "0~n",
+        "rangeradius": 1,
+        
+        "comment_rangefliterC": "0~n",
+        "rangefliterC": 0.3,
+        
+        "chromacomment_spaceweight": "0~n",
+        "chromaspaceweight": 2,
+        
+        "chromascaleradius": [1, 3],
+        "chromascaleweight": [0, 1],
+        "chromaisothreshold":
+        [
+            0, 0,
+            0, 0,
+            0, 0,
+            0, 0,
+            1, 1,
+            1.25, 1.25,
+            1.5, 1.5,
+            1.75, 1.75,
+            2, 2
+        ],
+        
+        "comment_guiderfilter":"ralated to iso",
+        "guideradius": [1, 1, 1, 1, 1, 1, 1, 1, 2],
+        "guidescale":  [1, 1, 1, 1, 1, 1, 1, 1, 2],
+        
+        "comment_nlmsimgacalcmethod": "0:global, 1:local",
+        "nlmSimgaCalcMethod": 1,
+        
+        "comment_nonlocalmeanC": "0~n, according to iso and drcgain*drcgaindark value",
+        "nonlocalmeansC": 
+        [
+            0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7,
+            0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7,
+            0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7,
+            0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7
+        ],
+        
+        "comment_wmcPyramid": "1~5, ralated to iso",
+        "wmcPyramid": [2, 2, 2, 3, 3, 3, 3, 4, 4],
+        "comment_wmcStrength": "0~n, ralated to wmcPyramid",
+        "wmcGaussian": [1, 1, 1, 1, 1],
+        "wmcLaplacian": [1, 1, 1, 1, 1],
+        "comment_wmcRadius": "1~5, ralated to wmcPyramid and iso",
+        "wmcRadius":
+       [
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1
+        ],
+        "comment_wmcKernelNum": "8/12, ralated to wmcRadius",
+        "wmcKernelNum": [12, 12, 12, 12, 12],
+        
+        "comment_jointRadius": "1~n, ralated to pyramid",
+        "jointRadius": [ 4, 4, 4 ],
+        
+        "comment_jointStep": "1~n, ralated to pyramid",
+        "jointStep": [ 2, 2, 2 ],
+        
+        "comment_kSigma": "1~n",
+        "kSigma": 0,
+        
+        "comment_jointsimgacalcmethod": "0:fixed, 1:profile",
+        "jointSimgaCalcMethod": 0,
+        
+        "comment_jointpyrlayer0filtermethod": "0:range, 1:wienershrink",
+        "jointPyrLayer0FilterMethod": 1,
+        
+        "comment_jointpostchromafiltermethod": "0:bypass, 1:wmc, 2:weightmedia",
+        "jointPostChromaFilterMethod": 2,
+        
+        "comment_wmCopyNum": "0~5, copy num in weighted media filter",
+        "wmCopyNum": 3
+
+    },
+
+    "luckyframe": 
+    {
+        "comment_method": "0:manual, 1:global sharpness",
+        "method": 1,
+
+        "fixedLuckyFrameID": 0
+    },
+
+    "noiseestimation": 
+    {
+        "comment_noiseestimation_method": "0:bypass, 1:laplace band pass filter",
+        "noiseestimationmethod": 1,
+
+        "comment_noisesigma": "noise sigma for range filter if bypass noise estimation",
+        "noisesigma": 5.0,
+
+        "comment_pixel count threshold":"if pixel count < threshold, profile will be invalid",
+        "pixelcountthreshold":0,
+
+        "comment_percentage threshold":"noise estimation percentage threshold according to ISO value",
+        "percentagethresholdLuma":
+        [
+            0.7, 0.6, 0.5, 0.5,
+            0.7, 0.6, 0.5, 0.5,
+            0.8, 0.7, 0.6, 0.5,
+            0.8, 0.7, 0.6, 0.5,
+            0.8, 0.7, 0.6, 0.5,
+            0.9, 0.9, 0.9, 0.9, 
+            0.9, 0.9, 0.9, 0.9,
+            0.9, 0.9, 0.9, 0.9,
+            0.9, 0.9, 0.9, 0.9
+        ],
+        
+        "comment_percentage threshold enhance for drcgain and drcgaindark":"noise estimation percentage threshold enhance according to drcgain and drcgaindark value",
+        "percentagethresholdEnhanceLuma":
+        [
+           0.0, 0.0, 0.0, 0.0,
+           0.0, 0.0, 0.0, 0.0,
+           0.0, 0.0, 0.0, 0.0, 
+           0.0, 0.0, 0.0, 0.0
+        ],
+        
+        "comment_percentage threshold":"noise estimation percentage threshold according to ISO value",
+        "percentagethresholdChroma":[0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9],
+    
+        "comment_percentage threshold enhance for drcgain and drcgaindark":"noise estimation percentage threshold enhance according to drcgain and drcgaindark value",
+        "percentagethresholdEnhanceChroma":[0.0, 0.0, 0.0, 0.0],
+        
+        "comment_noise_calculation_method":"0:ave, 1:percentage",
+        "noisecalculationmethod":1,
+        
+        "comment_localnoise_Enable": "0:global, 1:global and local, 2:local",
+        "localnoiseEn": 1,
+        
+        "comment_localnoiseUV_Enable": "0:global, 1:global and local, 2:local",
+        "localnoiseUVEn": 1,
+        
+        "comment_multilocalnoiseUV_Enable": "0:disable, >=1:enable",
+        "multilocalnoiseUVEn": 0
+    },
+
+    "fusion": 
+    {
+        "blocksize": 16,
+        
+        "comment_transformMethod": "0: dct, 1: wavlet_haar, 2: wavelet_db",
+        "transformMethod": 0,
+
+        "comment_fusionMethod": "0: ave, 1: p-power, 2: wiener merge, 3: wiener merge ref dominate, 4: robust, 5: wiener p_power",
+        "fusionMethod": 2,
+
+        "comment_overlapratio": "float in [0, 1.0], 0:non-overlap, 1:overall overlap",
+        "overlapratio": 0.5,
+
+        "commment_softHardThreshold": "0: soft threshold; 1: hard threshold; 2: half hard threshold; 3: wiener shrink threshold; 4: smooth wiener shrink threshold",
+        "softHardThreshold": 3,
+        
+        "comment_wbdctsfnr": "0:off, 1:on",
+        "wbdctSFafterWEnable": 1,
+        
+        "comment_blockmvRefinement": " 0: round, 1: floor and ceil mv search, 2: corner mv search",
+        "blockmvRefinementMethod": 2, 
+        
+        "comment_dctC": "constant C for dct processing",        
+        "comment_CMatrix":" low freq. low_med freq. med freq. med_high freq. high freq.",
+        "wienerMergeCMatrix":
+        [
+
+            1, 1, 1, 1, 1,
+            1, 2, 3, 4, 5,
+            2, 4, 6, 8, 10,
+            5, 10, 15, 20, 25, 
+            8, 16, 24, 32, 40, 
+            10, 20, 30, 40, 50, 
+            18, 36, 60, 80, 100, 
+            18, 36, 120, 160, 200,
+            18, 36, 120, 160, 300,
+
+            1, 1, 1, 1, 1,
+            1, 2, 3, 4, 5,
+            2, 4, 6, 8, 10,
+            5, 10, 15, 20, 25, 
+            8, 16, 24, 32, 40, 
+            10, 20, 30, 40, 50, 
+            18, 36, 60, 80, 100, 
+            18, 36, 120, 160, 200,
+            18, 36, 120, 160, 300,
+
+            1, 1, 1, 1, 1,
+            1, 2, 3, 4, 5,
+            2, 4, 6, 8, 10,
+            5, 10, 15, 20, 25, 
+            8, 16, 24, 32, 40, 
+            10, 20, 30, 40, 50, 
+            18, 36, 60, 80, 100, 
+            18, 36, 120, 160, 200,
+            18, 36, 120, 160, 300,
+
+            1, 1, 1, 1, 1,
+            1, 2, 3, 4, 5,
+            2, 4, 6, 8, 10,
+            5, 10, 15, 20, 25, 
+            8, 16, 24, 32, 40, 
+            10, 20, 30, 40, 50, 
+            18, 36, 60, 80, 100, 
+            18, 36, 120, 160, 200,
+            18, 36, 120, 160, 300
+        ],
+        "wienerMergeCDC":
+        [
+            2, 2, 2, 2, 2, 4, 6, 8, 10,
+            2, 2, 2, 2, 2, 4, 6, 8, 10,
+            2, 2, 2, 2, 2, 4, 6, 8, 10,
+            2, 2, 2, 2, 2, 4, 6, 8, 10
+        ],
+        
+        "comment_wienerMergeMismatchBlocksize":"0-blocksize, dct wiener merge blocksize use mismatch",
+        "wienerMergeMismatchBlocksize": 8,
+        
+        "comment_Detail2NoiseRatio":"ratio of detail to noise, larger value for strong noise redution, but loss detail",
+        "detail2NoiseRatio": 4,
+        
+        "comment_PostDctDenoiseWeightClip":"post denoise weight clip for dct wiener",
+        "postDctDenoiseWeightClip": 0.25,
+        
+        "comment_PostDctDenoiseBlendC":"post denoise blend for dct wiener, according to iso",
+        "postDctDenoiseBlendC": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+
+        "comment_postDctDenoiseCMatrix": "post denoise strenght for dct wiener, larger value for strong noise reduction",
+        "postDctDenoiseCMatrix":
+        [
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0,
+            0.0, 0.25, 0.5, 0.7, 1.0
+        ],
+
+        "comment_detailenhance": "0:off, 1:on",
+        "detailEnhanceEnable": 1,
+
+        "comment_detailEnhanceStrength":"strength of detail enhancement in dct, 1: keep not changed; > 1, enhance; < 1, suppression",
+        "detailEnhanceStrength":
+        [
+            1.13, 1.10, 1.08, 1.00, 1.00,
+            1.11, 1.10, 1.06, 1.00, 1.00,
+            1.09, 1.06, 1.06, 1.00, 1.00,
+            1.08, 1.06, 1.04, 1.00, 1.00,
+            1.07, 1.03, 1.04, 1.00, 1.00,
+            1.06, 1.03, 1.02, 1.00, 1.00,
+            1.03, 1.00, 1.00, 1.00, 1.00,
+            1.00, 1.00, 1.00, 1.00, 1.00,
+            1.00, 1.00, 1.00, 1.00, 1.00
+        ],
+        
+        "comment_flatenhance": "0:off, 1:on",
+        "flatEnhanceEnable": 0,
+        
+        "comment_flatenhancestrength": "0:no enhance, >0:enhance",
+        "flatEnhanceStrength": 3,
+        
+        "comment_flatnoisesigmaC": "constant C for flat enhance processing",
+        "flatNoiseSigmaC": 0.333,
+
+        "comment_waveletLevels":"wavelet levels",
+        "waveletLevels":2,
+
+        "comment_waveletWienerCMatrix": "wavelet wiener fusion parameters, ll,lh,hl,hh",
+        "waveletWienerCMatrix":
+        [
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+            0.01, 0.05, 0.05, 0.1,
+
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01,
+            0.001, 0.005, 0.005, 0.01
+        ],
+
+        "comment_waveletPower":"p_power value",
+        "pPower":1
+
+      },
+      
+    "skyopt": 
+    {
+        "comment_enableRawSkyAWB": "disable: 0, enable:1",
+        "enableRawSkyAWB": 1,
+
+        "comment_enableRawSkyDenoise": "disable: 0, enable:1",
+        "enableRawSkyDenoise": 1,
+
+        "comment_enableRawSkyToneMap": "disable: 0, enable:1",
+        "enableRawSkyToneMap": 1,
+
+        "comment_enableRawSkySharp": "disable: 0, enable:1",
+        "enableRawSkySharp": 0,
+
+        "comment_enableYuvSkyLUT": "disable: 0, enable:1",
+        "enableYuvSkyLUT": 1,
+
+        "comment_enableYuvSkyDenoise": "disable: 0, enable:1",
+        "enableYuvSkyDenoise": 1,
+
+        "comment_enableYuvSkyToneMap": "disable: 0, enable:1",
+        "enableYuvSkyToneMap": 1,
+
+        "comment_enableYuvSkySharp": "disable: 0, enable:1",
+        "enableYuvSkySharp": 0,
+   
+        "comment_methodSkySeg": "0: ",
+        "methodSkySeg": 0,
+
+        "comment_SkyToneMapSkyMaskRefineGuidedFilterRadius": "sky mask guided filter feather coefficient ",
+        "skymaskGFRadius": 32,
+        "skymaskGFSigma": 0.001,
+        
+        "comment_SkyTMBrightCurve": "Sky Tone Map Bright Coefficient, [0,1], < 0.5: more dark, 0.5 is equal with input, >0.5: more bright",
+        "coefBrightAmount": [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+
+        "comment_SkyTMBrightCurveDarkProtect": "Sky Tone Map Bright Dark Protect Coefficient, [0,1], < 0.5: more dark, 0.5 is equal with input, >0.5: more bright",
+        "coefBrightDarkProtect": [ 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085],
+
+        "comment_SkyTMDarkenCurve": "Sky Tone Map Darken Coefficient, [0,1], < 0.5: more dark, 0.5 is equal with input, >0.5: more bright",
+        "coefDarkenAmount": [ 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ],
+
+        "comment_SkyTMDarkenCurveDarkProtect": "Sky Tone Map Darken Dark Protect Coefficient, [0,1], < 0.5: more dark, 0.5 is equal with input, >0.5: more bright",
+        "coefDarkenDarkProtect": [ 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085],
+
+        "comment_SkyTMContrastCurve": "Sky Tone Map Contrast Coefficient , [0,1], 0: no contrast, 1: stronger contrast",
+        "coefContrastAmount": [ 0.225, 0.225, 0.225, 0.225, 0.225, 0.225, 0.225, 0.225, 0.225 ],
+
+        "comment_SkyTMContrastCurveDarkProtect": "Sky Tone Map Contrast Dark Protect Coefficient , [0,1], Protect dark region to apply and avoid stronger noise",
+        "coefContrastDarkProtect": [ 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085, 0.0085],
+
+        "comment_amountSkySharpen": " blending with origin image and sharpen image, [0, 1], 0: no sharpen(input image), 1: sharpen image",
+        "amountSkySharpen": [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
+    },
+
+    "multiFrameNR":
+    {
+        "comment_method": "// 0: none(disabled), 1: MFNR_SUPERSTAR_DIS_REF_MEAN_DIFF,",
+        "method": 1,
+
+        "comment_thresFlatRegionSigma": "control the merge on flat region",
+        "thresFlatRegionSigma": 100,
+
+        "comment_mergeCenterGain": "control the merge intensity in the center of image according to ISO value",
+        "mergeGlobalGain": [ 0.35, 0.35, 0.35, 0.35, 0.35, 0.7, 0.7, 0.7, 0.7],
+
+        "comment_mergeCornerGain": "control the merge intensity in the corner of image according to ISO value",
+        "mergeCornerGain": [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+
+        "comment_mergeBaseRadius": "used to distinguish between center and corner,range:[0,sqrt(height*height+width*width)/2]",
+        "mergeBaseRadius": 0,
+
+        "comment_minMergeRatio": "control the min merge intensity globally according to ISO value",
+        "minMergeRatio": [ 5.0, 5.0, 10.0, 10.0, 20.0, 40.0, 60.0, 70.0, 80.0],
+
+        "comment_maxMergeRatio": "control the max merge intensity globally according to ISO value",
+        "maxMergeRatio": [ 10.0, 20.0, 30.0, 40.0, 80.0, 100.0, 140.0, 180.0, 200.0 ],
+
+        "comment_minRadialRatio": "control the min merge intensity of RNR according to ISO value",
+        "minRadialRatio": [ 5.0, 5.0, 10.0, 10.0, 10.0, 15.0, 20.0, 30.0, 40.0],
+
+        "comment_maxRadialRatio": "control the max merge intensity of RNR according to ISO value",
+        "maxRadialRatio": [ 10.0, 15.0, 20.0, 30.0, 40.0, 80.0, 100.0, 120.0, 140.0 ]
+    },
+
+    "singleFrameNR": 
+    {
+        "comment_method": "// 0: none(disabled), 1: Pyramid NLM, ",
+        "method": 1,
+
+        "comment_ynrEnable": "control the luma noise reduction: 1-on,0-off",
+        "ynrEnable": [ 1, 1, 1, 0 ],
+
+        "comment_ynrBaseRadius": "control RNR radial radius,range:[0,sqrt(height*height+width*width)/2]",
+        "ynrBaseRadius": 1500,
+
+        "comment_ynrSkySigma": "control the luma denoising intensity in the sky",
+        "ynrSkySigma": [10,  8,  8,  6,
+                        12, 10,  8,  6,
+                        15, 12,  8,  6,
+                        30, 16, 12,  8,
+                        40, 20, 16, 12,
+                        50, 30, 25, 20,
+                        70, 50, 40, 30,
+                        80, 60, 50, 40,
+                        90, 70, 60, 40],
+                                                  
+
+        "comment_ynrLandSigma": "control the luma denoising intensity in the land",
+        "ynrLandSigma":  [ 7,  5,  4,  4,
+                           9,  7,  5,  5,
+                          11,  8,  6,  6,
+                          13, 11,  8,  8,
+                          15, 12, 10,  8,
+                          20, 15, 12, 10,
+                          30, 20, 15, 13,
+                          40, 30, 20, 15,
+                          50, 40, 30, 15],
+
+        "comment_ynrRadialGain": "control the luma denoising intensity in the RNR mode, range:[0,1023]",
+        "ynrRadialGain": [1023, 1023, 1023, 1023,
+                          1023, 1023, 1023, 1023,
+                          1023, 1023, 1023, 1023,
+                          1023, 1023, 1023, 1023,
+                           800,  900, 1023, 1023,
+                           700,  800, 1023, 1023,
+                           600,  700, 1023, 1023,
+                           500,  600, 1023, 1023,
+                           400,  500, 1023, 1023],
+    
+        "comment_cnrEnable": "control the chroma noise reduction: 1-on,0-off",
+        "cnrEnable": [ 1, 1, 1 ],
+
+        "comment_cnrBaseRadius": "control RNR radial radius,range:[0,sqrt(height*height+width*width)/4]",
+        "cnrBaseRadius": 500,
+
+        "comment_cnrSigmaY": "control the chroma denoising intensity in channel Y",
+        "cnrSigmaY": [11,  9,  8,
+                      12, 10,  8,
+                      14, 12, 10,
+                      16, 14, 12,
+                      18, 16, 13,
+                      24, 22, 18,
+                      28, 26, 22,
+                      32, 30, 26,
+                      36, 34, 30],
+   
+        "comment_cnrSigmaU": "control the chroma denoising intensity in channel U",
+        "cnrSigmaU": [ 2,  3,  1,
+                       3,  5,  3,
+                       3,  5,  3,
+                       4, 13, 11,
+                       4, 13, 11,
+                       5, 17, 15,
+                       5, 17, 15,
+                       8, 19, 17,
+                       8, 21, 19],
+   
+        "comment_cnrSigmaV": "control the chroma denoising intensity in channel V",
+        "cnrSigmaV": [ 2,  3,  1,
+                       3,  5,  3,
+                       3,  5,  3,
+                       4, 13, 11,
+                       4, 13, 11,
+                       5, 17, 15,
+                       5, 17, 15,
+                       8, 19, 17,
+                       8, 21, 19],
+
+        "comment_cnrRadialGain": "control the chroma denoising intensity in the RNR mode, range:[0,255]",
+        "cnrRadialGain": [ 150,  175, 255,
+                           150,  175, 255,
+                           150,  175, 255,
+                           150,  175, 255,
+                           150,  175, 255,
+                           150,  175, 255,
+                           150,  175, 255,
+                           150,  175, 255,
+                           150,  175, 255]
+    },
+
+    "sharpen": 
+    {
+        "comment_sharpenMethod":  "0: off, 1: simple usm, 2: complex usm using std and noise profile, 3: bilinear upscale + simple usm, 4: morpho, 5: edge-detect sharpen",
+        "sharpenMethod": 4,
+
+        "comment_strength": "sharpen strength, row:iso",
+        "strength": 
+        {
+            "comment_totalStrengthPos/Neg": "float, total strength for positive and negtive edge, row:iso",
+            "totalStrengthPos": [ 1.5, 0.5, 0.5, 0.4, 0.3, 0.25, 0.25, 0.25, 0.25 ],
+            "totalStrengthNeg": [ 1.5, 0.5, 0.5, 0.4, 0.3, 0.25, 0.25, 0.25, 0.25 ],
+            "detailStrength":   [ 1.5, 0.5, 0.5, 0.4, 0.3, 0.25, 0.25, 0.25, 0.25 ],
+            
+            "comment_antiAliasStrength": "float 0.0 ~ 255.0:strength for anti-alias, larger value means strong anti-alias filter strength; 1.0:edge intensity control",
+            "antiAliasStrength": 255.0,
+
+            "comment_highEdgeStrength_medianEdgeStrength": "float, sharpen strength of the anti-aliasing image",
+            "edgeHighFreqStrength": [ 2.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6 ],
+            "edgeMiddleFreqStrength": [ 0.0, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6 ], 
+
+            "comment_amountWeightMediaFilterStrength" : "int[0~8], 0:strong filter, 8:no filter",
+            "amountWeightMedianFilterStrength": [4, 4, 4, 4, 4, 4, 4, 4, 4]
+        },
+
+        "comment_detection": "detail and edge detection",
+        "detection": 
+        {
+            "comment_noiseThreshold": "float, noise threshold, row:iso",
+            "noiseThreshold": [2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+
+            "comment_detailThreshold":  "float, detail threshold, row:iso",
+            "detailThreshold": [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+
+            "comment_edgeThreshold":  "float, detail threshold, row:iso",
+            "edgeThreshold1": [ 50, 4, 4, 4, 4, 4, 4, 4, 4],
+            "edgeThreshold2": [ 100, 16, 16, 16, 16, 16, 16, 16, 16]
+        },
+
+        "comment_basicSharpen": "basic sharpen",
+        "basicSharpen":
+        {
+            "comment_filterIndex": "bool x 2, filter index for different high / band pass filter ",
+            "filterIndex" : [0, 1],
+
+            "comment_contrastGain": "float, 16 knee on contrast value, row:contrast, col:iso",
+            "contrastGain":[1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00,
+                            1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00,
+                            1.00, 1.00, 0.90, 0.80, 0.70, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25, 0.20, 0.15, 0.10, 0.00],
+            "comment_lumaGain": "float, 16 knee on luma value, row:contrast, col:iso",
+            "lumaGain": [   0.8, 1.0, 1.2, 1.4, 1.4, 1.2, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+        },
+
+        "comment_clamp":  "clamp to limite over-sharpen",
+        "clamp": 
+        {
+            "comment_clampType": "0:off, 1: clamp by clampPos(Neg)Percent and clampPos(Neg)Base, 2: calmp based on statistic, to weaken limitation for pulse edge",
+            "clampType": 1,
+
+            "comment_clampPos(Neg)Percent_clampPos(Neg)Base": "float, limited value = grayLevel * clampPos(Neg)Percent + clampPos(Neg)Base",
+            "clampPosPercent": [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            "clampNegPercent": [0.0, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7],
+            "clampPosBase": [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "clampNegBase": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+
+        "comment_localContrastEnhance": "local contrast enhancement ",
+        "localContrastEnhance":
+        {
+            "comment_method": "int, 0:disable, 1:enable only apply to detail region",
+            "lceMethod": 1,
+
+            "comment_localScope": "int, local scope for contrast enhance, larger value means wider local region",
+            "lceScope": 2,
+             
+            "comment_localStrenght": "float, local strength for contrast enhancement",
+            "lceStrength": 0.0
+        },
+
+        "comment_upsample": "upsample control",
+        "upsample":
+        {
+            "comment_upscalePosition" : "upscale position, 0:bypass, 1:pre, 2:post",
+            "upscalePosition" : 0,
+
+            "comment_upscaleMethod": "upscale method, 0:bilinear, 1:bicubic",
+            "upscaleMethod": 0,
+
+            "comment_upscaleRatio" : "int, upscale ratio",
+            "upscaleRatio" : 2
+        },
+
+        "comment_heuristic":"heuristic sharpen",
+        "heuristic":
+        {
+            "comment_method": "0:bypass, 1:color information, 2:semantic segmentation",
+            "heuristicMethod": 0,
+
+            "comment_heuristicStrength": "float x 4, heuristic strength arrary for each region",
+            "heuristicStrength" : [1.0, 1.0, 1.0, 1.0] 
+        }
+    },
+    
+    "sef":
+    {
+        "comment_method": "0:bypass, 1:nakaRushtion, 2:reinhard gtm, 3:reinhard ltm, 4:bimef_manual, 5:bimef_auto, 6:beta_gamma, 7:exampler",
+        "method": 4,
+
+        "comment_numSimulatedExposure": "num of manually control exposure, 8: MAX_EXPOSURE_NUM",
+        "numSimulatedExposure": 5,
+
+        "comment_localRadius": "radius for local operation",
+        "localRadius": 5,
+
+        "comment_brightnessBoostAlpha": "brightness boost alpha to mean value, 0~1, larger value means more brighten",
+        "brightnessBoostAlpha": 0.8,
+
+        "comment_maxLumaEnhancedRatio": "how many bright region is brighten, 0~1, larger value means more over-saturation",
+        "maxLumaEnhancedRatio": 0.6,
+
+        "comment_colorRestorationGamma": "gamma for color restoration, 1.0~2.0",
+        "colorRestorationGamma": 1.2,
+
+        "comment_numPyrLevel": "num of pyramid level",
+        "numPyrLevel": 4,
+
+        "comment_weightWellExposedness_Mertens": "control well exposedness weight at each exposure, 0: means disable",
+        "weightWellExposedness": [ 0, 0, 0, 0, 0 ],
+
+        "comment_weightWellExposedness_FMMEF": "control well exposedness weight at each exposure, 0: means disable",
+        "weightWellExposednessArcTan": [1, 1, 1, 1, 1 ],
+
+        "comment_weightContrast_Mertens": "control contrast weight at each exposure, 0: means disable",
+        "weightContrast": [ 0, 0, 0, 0, 0 ],
+
+        "comment_weightSaturation_Mertens": "control saturation weight at each exposure, 0: means disable",
+        "weightSaturation": [ 0, 0, 0, 0, 0 ],
+
+        "comment_btf_beta_gamma": "beta*I^gamma, base BTF function",
+        "btfBeta": [ 1, 1, 2, 4, 8 ],
+        "btfGamma": [ 4, 1, 1, 1, 1 ],
+
+        "comment_btf_camera_response_model": "(I^(k^a))*(e^(b*(1-k^a))), normally control k as exposure ratio, a and b is control to simulate camera response model",
+        "btfK": [ 0.5, 1, 2, 4, 8 ],
+        "btfA": [ -0.3293, -0.3293, -0.3293, -0.3293, -0.3293 ],
+        "btfB": [1.1257, 1.1257, 1.1257, 1.1257, 1.1257]
+    }
+}

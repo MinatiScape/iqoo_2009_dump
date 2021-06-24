@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config version="1.0">
+
+    <!-- Face Config -->
+    <face-config
+        support-3d="False"
+        support-pay="False"
+        support-assistant="False"
+        support-convenience="False"
+        set-convenience="True"
+        set_wallpaper_brightness_adjust="True"
+        support-vivo-supplier="False"
+        forbid-release="False"/>
+
+    <!-- Camera Skip Frame -->
+    <skip-frame value="3"/>
+
+    <!-- Adjust Brightness -->
+    <adjust-brightness color="0xFFFDFA" start-brightness="0.0" brightness="0.1297665" duration="800"/>
+
+    <!-- Payment package list -->
+    <payment-package package="com.tencent.mm"/>
+    <payment-package package="com.eg.android.AlipayGphone"/>
+    <payment-package package="com.tencent.mobileqq"/>
+    <payment-package package="com.taobao.taobao"/>
+    <payment-package package="com.tmall.wireless"/>
+    <payment-package package="com.taobao.idlefish"/>
+    <payment-package package="com.taobao.movie.android"/>
+    <payment-package package="com.taobao.trip"/>
+    <payment-package package="com.taobao.litetao"/>
+    <payment-package package="com.citic21.user"/>
+
+    <!-- WeChat white activity list -->
+    <wechat-white-list-activity activity="com.tencent.mm/com.tencent.mm.ui.LauncherUI"/>
+    <wechat-white-list-activity activity="com.tencent.mm/com.tencent.mm.plugin.setting"/>
+    <wechat-white-list-activity activity="com.tencent.mm/com.tencent.mm.plugin.sns.ui.SnsTimeLineUI"/>
+    <wechat-white-list-activity activity="com.tencent.mm/com.tencent.mm.ui.chatting.ChattingUI"/>
+    <wechat-white-list-activity activity="com.tencent.mm/com.tencent.mm.plugin.account.ui.LoginPasswordUI"/>
+    <wechat-white-list-activity activity="com.tencent.mm/com.tencent.mm.plugin.mall.ui.MallWalletUI"/>
+    <wechat-white-list-activity activity="com.tencent.mm/com.tencent.mm.plugin.mall.ui.MallIndexUI"/>
+
+    <!-- Black activity list -->
+    <black-list-activity activity="com.vivo.gallery/com.android.gallery3d.app.Gallery"/>
+    <black-list-activity activity="com.vivo.gallery/com.android.gallery3d.vivo.NewPageActivity"/>
+    <black-list-activity activity="com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity"/>
+    <black-list-activity activity="com.chaozh.iReader/com.zhangyue.iReader.read.ui.Activity_BookBrowser_TXT"/>
+    <black-list-activity activity="com.autonavi.minimap/com.autonavi.map.activity.NewMapActivity"/>
+    <black-list-activity activity="com.baidu.BaiduMap/com.baidu.baidumaps.MapsActivity"/>
+    <black-list-activity activity="com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity"/>
+    <black-list-activity activity="com.google.android.apps.maps/com.google.android.maps.MapsActivity"/>
+    <black-list-activity activity="com.tencent.mobileqq/com.tencent.av.ui.AVActivity"/>
+    <black-list-activity activity="com.chaozh.iReader/com.zhangyue.iReader.read.ui.Activity_BookBrowser_TXT"/>
+    <black-list-activity activity="com.vivo.childrenmode/com.vivo.childrenmode.activity.VideoPlayActivity"/>
+    <black-list-activity activity="com.happyelements.AndroidAnimal/com.happyelements.android.platform.vivo.ads.SplashActivity"/>
+    <black-list-activity activity="com.android.chrome/com.google.android.apps.chrome.Main"/>
+    <black-list-activity activity="com.funshion.video.mobile/com.funshion.video.activity.MediaPlayActivity"/>
+    <black-list-activity activity="com.funshion.video.mobile/com.funshion.video.activity.VideoPlayActivityV2"/>
+    <black-list-activity activity="com.vivo.hybrid/com.vivo.hybrid.qgame.GameLauncherActivity$Game2"/>
+    <black-list-activity activity="com.vivo.gallery/com.android.gallery3d.app.CropImage"/>
+    <black-list-activity activity="com.bbk.theme/com.bbk.theme.ResLiveWallpaperPreviewActivity"/>
+    <black-list-activity activity="com.bbk.theme/com.bbk.theme.livewallpaper.LiveWallpaperDetailActivity"/>
+
+</config>
