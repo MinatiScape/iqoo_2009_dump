@@ -1,0 +1,83 @@
+#init.rc for vivo
+on post-fs-data
+    # vivo xiejiyuan add for vrt begin
+    mkdir /data/vusbd 0775 root shell encryption=Attempt
+    # vivo xiejiyuan add for vrt end
+
+#20201023 xiangjizu add for apkslim
+    chmod 0777 /data/vivo-common/gallery_res
+    chmod 0777 /data/vivo-common/gallery_res/README.txt
+    chmod 0777 /data/vivo-common/gallery_res/assets
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/aesthetics
+    chmod 0777 /data/vivo-common/gallery_res/assets/aesthetics/mobilenetv2_nearest_portrait_finetune.mnn
+    chmod 0777 /data/vivo-common/gallery_res/assets/aesthetics/config.xlx
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/all_model_asset
+    chmod 0777 /data/vivo-common/gallery_res/assets/all_model_asset/config.xlx
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/clusterrank
+    chmod 0777 /data/vivo-common/gallery_res/assets/clusterrank/mbn_ranker_128.ckpt-15000_tf1.12.vaim
+    chmod 0777 /data/vivo-common/gallery_res/assets/clusterrank/config.xlx
+
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/ocr
+    chmod 0777 /data/vivo-common/gallery_res/assets/ocr/plate_number.zip
+    chmod 0777 /data/vivo-common/gallery_res/assets/ocr/config.xlx
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/similar
+    chmod 0777 /data/vivo-common/gallery_res/assets/similar/l2net.bin
+    chmod 0777 /data/vivo-common/gallery_res/assets/similar/l2net.param.bin
+    chmod 0777 /data/vivo-common/gallery_res/assets/similar/config.xlx
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/tagcreater
+    chmod 0777 /data/vivo-common/gallery_res/assets/tagcreater/c279-epoch35-v3-circleloss_0901_nc4hw4_fp16.vaim
+    chmod 0777 /data/vivo-common/gallery_res/assets/tagcreater/config.xlx
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/videoclassify
+    chmod 0777 /data/vivo-common/gallery_res/assets/videoclassify/videoclassify_v6.4_v4.0_0725.pb
+    chmod 0777 /data/vivo-common/gallery_res/assets/videoclassify/config.xlx
+
+    chmod 0777 /data/vivo-common/gallery_res/assets/facegroup
+    chmod 0777 /data/vivo-common/gallery_res/assets/facegroup/config.xlx
+
+    chmod 0777 /data/vivo-common/gallery_res/assets_in
+
+    chmod 0777 /data/vivo-common/gallery_res/assets_in/facegroup
+    chmod 0777 /data/vivo-common/gallery_res/assets_in/facegroup/license_release_vivo.lic
+    chmod 0777 /data/vivo-common/gallery_res/assets_in/facegroup/M_Cluster_L2G_Common_MLP_3.5.0.model
+    chmod 0777 /data/vivo-common/gallery_res/assets_in/facegroup/M_Verify_MIMICG2_Common_3.5.0.model
+
+#20201023 xiangjizu add for apkslim
+
+# vivo xiejiyuan add for vrt begin
+on property:sys.vendor.adbd=1
+    rm /data/vusbd/sec_certificate
+    rm /data/vusbd/load
+    rm /data/mdl/.vrp_test
+
+service vrp_p /system/bin/vrp -p
+    disabled
+    user root
+    group root system
+    capabilities IPC_LOCK SYS_NICE
+    priority -20
+    ioprio rt 0
+    oneshot
+
+service vrp_r /system/bin/vrp -r
+    disabled
+    user root
+    group root system
+    capabilities IPC_LOCK SYS_NICE
+    priority -20
+    ioprio rt 0
+    oneshot
+
+on property:ro.build.type=user && property:service.vrp.wait=p
+   start vrp_p
+
+on property:ro.build.type=user && property:service.vrp.wait=r
+   start vrp_r
+# vivo xiejiyuan add for vrt end
+

@@ -1,0 +1,358 @@
+#line 1 "vendor/vivo/external/Nfc/vendor/nxp/SN100x/sepolicy/private/property_contexts"
+# NFC properties
+persist.vendor.vivo.nfc.                       u:object_r:system_prop:s0
+persist.vendor.vivo.support.ese                u:object_r:system_prop:s0
+persist.vendor.vivo.wallet.nfc.channel         u:object_r:system_prop:s0
+
+#line 1 "device/qcom/sepolicy/generic/private/property_contexts"
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ro.vendor.qti.va_aosp.support       u:object_r:vendor_exported_system_prop:s0 exact bool
+ro.vendor.qti.va_odm.support       u:object_r:vendor_exported_odm_prop:s0 exact bool
+ro.vendor.perf.scroll_opt        u:object_r:vendor_exported_system_prop:s0 exact bool
+ro.vendor.perf.scroll_opt.heavy_app        u:object_r:vendor_exported_system_prop:s0 exact int
+ro.netflix.bsp_rev                 u:object_r:vendor_exported_system_prop:s0 exact string
+
+# Beluga
+ro.vendor.beluga.                         u:object_r:vendor_exported_system_prop:s0
+#line 1 "device/qcom/sepolicy/qva/private/property_contexts"
+# Copyright (c) 2017, 2019 The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+persist.vendor.dpm.                        u:object_r:vendor_persist_dpm_prop:s0
+persist.vendor.btstack                     u:object_r:bluetooth_prop:s0
+persist.vendor.bluetooth.emailaccountcount u:object_r:bluetooth_prop:s0
+persist.vendor.bt.a2dp                     u:object_r:bluetooth_prop:s0
+persist.vendor.bt_logger.                  u:object_r:bluetooth_prop:s0
+persist.vendor.service.bt.                 u:object_r:bluetooth_prop:s0
+ro.vendor.btstack.                         u:object_r:bluetooth_prop:s0
+vendor.pts.                                u:object_r:bluetooth_prop:s0
+vendor.bt.pts.                             u:object_r:bluetooth_prop:s0
+vendor.bluetooth.                          u:object_r:bluetooth_prop:s0
+vendor.camera.aux.packagelist              u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.camera.privapp.list         u:object_r:vendor_persist_camera_prop:s0
+
+#mm-parser
+vendor.mm.enable.qcom_parser       u:object_r:vendor_mm_parser_prop:s0
+vendor.qcom_parser.                u:object_r:vendor_mm_parser_prop:s0
+#mm-osal
+vendor.debug.mmosal.config         u:object_r:vendor_mm_osal_prop:s0
+
+#perf
+vendor.perf.workloadclassifier.enable      u:object_r:vendor_wlc_prop:s0
+persist.vendor.build.date.utc              u:object_r:vendor_wlc_prop:s0
+
+#mm-video
+persist.vendor.debug.av.logs.lvl          u:object_r:debug_prop:s0
+persist.vendor.debug.en.drpcrpt           u:object_r:vendor_mm_video_prop:s0
+persist.vendor.media.hls.                 u:object_r:vendor_mm_video_prop:s0
+persist.vendor.sys.media.rtp-ports        u:object_r:vendor_mm_video_prop:s0
+vendor.encoder.video.profile              u:object_r:vendor_mm_video_prop:s0
+vendor.sys.media.target.version           u:object_r:vendor_sys_video_prop:s0
+vendor.sys.video.disable.ubwc             u:object_r:vendor_sys_video_prop:s0
+
+#Wifi Display
+vendor.wfdservice                         u:object_r:vendor_wfd_service_prop:s0
+persist.vendor.debug.wfd.wfdsvc           u:object_r:vendor_wfd_sys_debug_prop:s0
+persist.vendor.debug.wfdcdbg              u:object_r:vendor_wfd_sys_debug_prop:s0
+persist.vendor.debug.wfdcdbgv             u:object_r:vendor_wfd_sys_debug_prop:s0
+persist.vendor.sys.debug.mux.             u:object_r:vendor_wfd_sys_debug_prop:s0
+persist.vendor.sys.debug.rtp.             u:object_r:vendor_wfd_sys_debug_prop:s0
+persist.vendor.sys.debug.wfd.             u:object_r:vendor_wfd_sys_debug_prop:s0
+
+# WIGIG
+persist.vendor.wigig.                      u:object_r:vendor_wigig_core_prop:s0
+persist.vendor.fst.                        u:object_r:vendor_fst_prop:s0
+persist.dpm.feature                        u:object_r:vendor_persist_dpm_prop:s0
+ctl.stop$dpmd                              u:object_r:ctl_dpmd_prop:s0
+
+# Beluga
+ro.vendor.beluga.p                         u:object_r:vendor_exported_system_prop:s0
+ro.vendor.beluga.c                         u:object_r:vendor_exported_system_prop:s0
+ro.vendor.beluga.s                         u:object_r:vendor_exported_system_prop:s0
+ro.vendor.beluga.t                         u:object_r:vendor_exported_system_prop:s0
+#line 1 "vendor/vivo/system/sepolicy/common/private/property_contexts"
+#linchunsheng add for swt begin
+persist.system.crash.count u:object_r:system_prop:s0
+#linchunsheng add for swt end
+
+#vivo zhangjuguang add for getprop ro.config.size_override [B181107-1111] begin
+ro.config.size_override u:object_r:exported2_config_prop:s0 exact string
+#vivo zhangjuguang add for getprop ro.config.size_override [B181107-1111] end
+
+#VIVO chenyidian add for fast_charge VIVO_SEPOLICY begin
+persist.vivo.          u:object_r:system_prop:s0
+##VIVO chenyidian add for fast_charge VIVO_SEPOLICY end
+
+#VIVO maoyuanze add for vowifi begin
+persist.vendor.vivo.wfc.delay_wifi          u:object_r:system_prop:s0
+#VIVO maoyuanze add for vowifi  end
+
+#VIVO huxiao add for HOME_RESTRICTION begin
+persist.home.   u:object_r:system_prop:s0
+#VIVO huxiao add for HOME_RESTRICTION end
+
+#vivo qinhaichao add for cms begin
+ro.cms.version               u:object_r:ctl_bootanim_prop:s0
+#vivo qinhaichao add for cms end
+
+#vivo qinhaichao add for roundphone begin
+ctl.roundphone            u:object_r:ctl_bootanim_prop:s0
+#vivo qinhaichao add for roundphone end
+
+#vivo qinhaichao add for VIVO_TIER begin
+ro.system.vivo.tierlevel     u:object_r:exported_default_prop:s0 exact string
+#vivo qinhaichao add for VIVO_TIER end
+
+#vivo kanglvshan add for VIVO_PROP begin
+ro.system.vivo.              u:object_r:exported_default_prop:s0
+persist.system.vivo.         u:object_r:exported_default_prop:s0
+#vivo kanglvshan add for VIVO_PROP end
+
+#vivo kanglvshan add for ro.vivo.warranty.license.number begin
+ro.vivo.warranty.license.number   u:object_r:exported_default_prop:s0 exact string
+#vivo kanglvshan add for ro.vivo.warranty.license.number end
+
+#viv qinhaichao add for exported_default_prop begin
+ro.vivo.product.model        u:object_r:exported_default_prop:s0 exact string
+ro.vivo.product.platform     u:object_r:exported_default_prop:s0 exact string
+ro.hardware.bbk              u:object_r:exported_default_prop:s0 exact string
+ro.vivo.hardware.version     u:object_r:exported_default_prop:s0 exact string
+#viv qinhaichao add for exported_default_prop end
+ro.vivo.market.name          u:object_r:exported_default_prop:s0 exact string
+ro.vivo.internet.name        u:object_r:exported_default_prop:s0 exact string
+ro.vivo.project.ramsize      u:object_r:exported_default_prop:s0 exact string
+ro.vivo.rom.version          u:object_r:exported_default_prop:s0 exact string
+ro.product.model.bbk         u:object_r:exported_default_prop:s0 exact string
+
+#vivo lihaibo add for VIVO_PROP begin
+ro.vivo.os.version           u:object_r:exported_default_prop:s0
+#vivo lihaibo add for VIVO_PROP end
+
+#vivo wangjiewen add for zram writeback end
+ro.vivo.fist.os.version      u:object_r:exported_default_prop:s0
+#vivo wangjiewen add for zram writeback end
+
+#viv weiwei add for exported_default_prop begin
+ro.product.customize.bbk     u:object_r:exported_default_prop:s0 exact string
+ro.product.country.region    u:object_r:exported_default_prop:s0 exact string
+#viv weiwei add for exported_default_prop end
+# vivo jupengfei add for log filter begin
+persist.sys.shipped u:object_r:system_prop:s0
+persist.sys.export  u:object_r:system_prop:s0
+
+persist.log.  u:object_r:system_prop:s0
+
+log.audit.enable       u:object_r:system_prop:s0
+
+# log ratelimit
+log.ratelimit.level    u:object_r:log_tag_prop:s0
+persist.log.ratelimit  u:object_r:log_tag_prop:s0
+# vivo jupengfei add for log filter end
+
+#miaoxu  add for veprf begin
+ro.vivo.product.solution     u:object_r:exported_default_prop:s0 exact string
+#miaoxu  add for veprf end
+
+#yuanjianchun add for vgc begin
+persist.product.carrier.name u:object_r:system_prop:s0
+ro.vivo.vgc.activate         u:object_r:exported_default_prop:s0 exact string
+ro.vgc.                      u:object_r:exported_default_prop:s0
+ro.vivo.simtrigger.          u:object_r:exported_default_prop:s0
+ro.vivo.phonelock.           u:object_r:exported_default_prop:s0
+ro.build.ota.fbrollback      u:object_r:exported_default_prop:s0 exact string
+ro.com.google.acsa           u:object_r:exported_default_prop:s0 exact string
+ro.com.google.rlz_ap_whitelist u:object_r:exported_default_prop:s0 exact string
+ro.config.wallpaper_component u:object_r:exported_default_prop:s0 exact string
+ro.product.customize.comercial u:object_r:exported_default_prop:s0 exact string
+ro.vivo.sim_lock.needpw u:object_r:exported_default_prop:s0 exact string
+ro.vivo.simtrigger.activate       u:object_r:exported_default_prop:s0 exact string
+ro.cota.                     u:object_r:exported_default_prop:s0
+ro.com.google.clientidbase.   u:object_r:exported_default_prop:s0
+ro.build.gn.                 u:object_r:exported_default_prop:s0
+ro.vivo.cust.                u:object_r:exported_default_prop:s0
+#yuanjianchun add for vgc end
+
+#vivo liujiang add for getprop ro.config.message_sound [B191203-2594] begin
+ro.config.message_sound u:object_r:exported2_config_prop:s0 exact string
+#vivo liujiang add for getprop ro.config.message_sound [B191203-2594] end
+
+#vivo xujiawei add for navigationbar begin
+qemu.hw.mainkeys        u:object_r:system_prop:s0
+#vivo xujiawei add for navigationbar end
+
+
+
+# vivo wangqin add for boot sound begin
+sys.boot.animaudio u:object_r:exported_system_prop:s0 exact int
+sys.boot.animshutdown u:object_r:exported_system_prop:s0 exact int
+# # # vivo wangqin add for boot sound end
+
+# vivo guomin add for epm begin
+debug.epm.              u:object_r:system_prop:s0
+epm.fd.                 u:object_r:system_prop:s0
+# vivo guomin add for epm begin
+
+# vivo guojunzheng add for device daemon begin
+ro.device.demo   u:object_r:system_prop:s0
+ro.rpmb.board    u:object_r:system_prop:s0
+ro.pcba.control   u:object_r:system_prop:s0
+ro.imei_rpmb.status    u:object_r:system_prop:s0
+ro.imei_match.status    u:object_r:system_prop:s0
+ro.imei_match.recovery    u:object_r:system_prop:s0
+# vivo guojunzheng add for device daemon end
+
+#vivo qinxingxing add for display mode begin
+persist.sys.displaymode.state   u:object_r:display_state_prop:s0
+persist.sys.bluelight.minred    u:object_r:display_state_prop:s0
+persist.sys.bluelight.mingreen  u:object_r:display_state_prop:s0
+persist.sys.bluelight.minblue   u:object_r:display_state_prop:s0
+persist.sys.colortemp.maxred    u:object_r:display_state_prop:s0
+persist.sys.colortemp.maxgreen  u:object_r:display_state_prop:s0
+persist.sys.colortemp.maxblue   u:object_r:display_state_prop:s0
+persist.sys.colortemp.minred    u:object_r:display_state_prop:s0
+persist.sys.colortemp.mingreen  u:object_r:display_state_prop:s0
+persist.sys.colortemp.minblue   u:object_r:display_state_prop:s0
+persist.sys.bluelight.en.vivo   u:object_r:display_state_prop:s0
+persist.sys.colortemp.en.vivo   u:object_r:display_state_prop:s0
+persist.sys.bluelight.ui.vivo   u:object_r:display_state_prop:s0
+persist.sys.colortemp.ui.vivo   u:object_r:display_state_prop:s0
+#vivo qinxingxing add for display mode end
+
+#vivo zhuangxiaoliang add for colour gamut begin
+persist.sys.colourgamut.en.vivo u:object_r:colour_gamut_prop:s0
+#vivo zhuangxiaoliang add for colour gamut end
+
+
+# vivo hujin add for VIVO_SEPOLICY begin
+ctl.dcdiming            u:object_r:ctl_dcdiming_prop:s0
+#vivo hujin add for VIVO_SEPOLICY end
+
+#vivo chenyidian add for font begin
+persist.system.vivo.fontsize  u:object_r:vivo_font_prop:s0
+#vivo chenyidian add for font end
+
+# vivo wangbiying add for immerse_trace begin
+persist.navcolor.trace u:object_r:system_prop:s0
+# vivo wangbiying add for immerse_trace end
+
+#vivo wangbiying add for wallpaper begin
+ro.config.wallpaper u:object_r:system_prop:s0
+ro.config.lock.wallpaper u:object_r:system_prop:s0
+persist.sys.theme.color u:object_r:system_prop:s0
+persist.sys.vivo.product.cust u:object_r:system_prop:s0
+#vivo wangbiying add for wallpaper end
+
+# vivo xiejiyuan add for vrt begin
+# .wait set by adbd
+service.vrt.wait u:object_r:adbd_prop:s0
+
+# .done/.result set by adbd/vrp
+service.vrt.done u:object_r:system_prop:s0
+service.vrt.result u:object_r:system_prop:s0
+service.vrt.result_extra u:object_r:system_prop:s0
+
+# wait timeout values read by adbd
+service.adb.vrp_start_delay u:object_r:shell_prop:s0
+service.adb.vrp_done_delay u:object_r:shell_prop:s0
+
+# whether privileges kept by vusbd
+sys.vusbd.root u:object_r:vusbd_root_prop:s0
+# vivo xiejiyuan add for vrt end
+
+# vivo zhangtaorjyb add for wifi sepolicy end
+persist.vivo.softap.maxsta          u:object_r:exported_system_prop:s0
+persist.vivo.sla.enabled            u:object_r:exported_system_prop:s0
+persist.vivo.support.dualwifi       u:object_r:exported_system_prop:s0
+persist.vivo.dualwifi.version       u:object_r:exported_system_prop:s0
+persist.vivo.wifi.concurrency       u:object_r:exported_system_prop:s0
+persist.sys.wifi.vivo.dualinterface u:object_r:exported_system_prop:s0
+# vivo zhangtaorjyb add for wifi sepolicy end
+
+# vivo fengmingli add for vusbd begin
+vendor.switch.vusbd u:object_r:shell_prop:s0
+# vivo fengmingli add for vusbd end
+
+#vivo tangdexi add for getprop ro.config.calendar_sound [B200422-3234] begin
+ro.config.calendar_sound u:object_r:exported2_config_prop:s0 exact string
+ro.config.delete_sound u:object_r:exported2_config_prop:s0 exact string
+#vivo tangdexi add for getprop ro.config.calendar_sound [B200422-3234] end
+
+#vivo luoyanbiao add for getprop ro.config.superx_a_sound [B201016-1006] begin
+ro.config.superx_a_sound u:object_r:exported2_config_prop:s0 exact string
+ro.config.superx_b_sound u:object_r:exported2_config_prop:s0 exact string
+ro.config.musicplayer_open u:object_r:exported2_config_prop:s0 exact string
+ro.config.musicplayer_close u:object_r:exported2_config_prop:s0 exact string
+ro.config.fos_use_tracktitle_sound u:object_r:exported2_config_prop:s0 exact string
+#vivo luoyanbiao add for getprop ro.config.superx_a_sound [B201016-1006] end
+
+#vivo luoyanbiao add for getprop ro.config.superx_a_sound [B201028-2981] begin
+ro.config.alarm_component_sound u:object_r:exported2_config_prop:s0 exact string
+#vivo luoyanbiao add for getprop ro.config.superx_a_sound [B201028-2981] end
+
+#vivo wuyuanhan add for anti flag begin
+ro.vivo.phonelock.enabled    u:object_r:exported_default_prop:s0 exact string
+ro.vivo.sim_lock             u:object_r:exported_default_prop:s0 exact string
+###vivo wuyuanhan add for anti flag end
+
+#line 1 "vendor/vivo/system/sepolicy/qcom-common/private/property_contexts"
+# vivo ouzhiming add for camera begin
+camera.vibrate.skip            u:object_r:system_camera_prop:s0
+persist.sys.camera.log         u:object_r:system_camera_prop:s0
+persist.sys.vivocameralog.size u:object_r:system_camera_prop:s0
+persist.camera.log.onlymainlog u:object_r:system_camera_prop:s0
+# vivo ouzhiming add for camera end
+
+# vivo xuyong add for pem perfd begin
+persist.vendor.vivo.perfd u:object_r:debug_prop:s0
+# vivo xuyong add for pem perfd end
+

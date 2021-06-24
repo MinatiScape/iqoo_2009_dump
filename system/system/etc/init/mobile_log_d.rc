@@ -1,0 +1,7 @@
+on post-fs-data
+    mkdir /data/log_temp 0755 system system
+    mkdir /data/mblog 0755 system system
+
+service mobile_log_d /system/bin/mobile_log_d
+    class main
+

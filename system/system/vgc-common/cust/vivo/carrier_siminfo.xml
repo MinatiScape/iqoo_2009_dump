@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<config version="1.0">
+  <mapping name="carrier">
+    <!-- BYT FR -->
+    <siminfo>
+        <property name="mcc_mnc">20820</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">20820V01</property>
+    </siminfo>
+    <!-- CN for Test -->
+    <siminfo>
+        <property name="mcc_mnc">46000</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46000V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46002</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46002V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46007</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46007V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46003</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46003V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46005</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46005V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46009</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46009V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46006</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46006V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46001</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46001V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46008</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46008V01</property>
+    </siminfo>
+    <siminfo>
+        <property name="mcc_mnc">46011</property>
+        <property name="rule">0x01</property>
+        <property name="map_key">46011V01</property>
+    </siminfo>
+
+    <siminfo>
+      <property name="rule">0x1</property>
+      <property name="mcc_mnc">208.*</property>
+      <property name="map_key">208</property>
+    </siminfo>
+  </mapping>
+</config>

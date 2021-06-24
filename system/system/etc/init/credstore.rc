@@ -1,0 +1,4 @@
+service credstore /system/bin/credstore /data/misc/credstore
+    class late_start
+    user credstore
+    group credstore

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<CheckItems>
+	<!--check ufs writebooster or turbowrite settings-->
+	<!--if type is all_enable:1.enable the check of all projects on the platform;-->
+	<!--if type is part_enable:1.just enable the check of projects field on the platform;-->
+	<!--if type is part_disable:1.just disable the check of projects field on the platform;-->
+	<CheckItem platform="SM8350" type="all_enable" projects="" reserve=""/>
+	<CheckItem platform="MTK6853" type="part_enable" projects="PD2061,PD2083F_EX" reserve=""/>
+	<CheckItem platform="MTK6891" type="part_enable" projects="PD2072,PD2085,PD2063" reserve=""/>
+	<CheckItem platform="ERD9815" type="all_enable" projects="" reserve=""/>
+	<CheckItem platform="SM8250" type="all_enable" projects="" reserve=""/>
+	<CheckItem platform="SM7250" type="part_enable" projects="PD2073,PD2073F_EX" reserve=""/>
+	<!--CheckItem platform="E98x" type="part_enable" projects="PD2088,PD2089,PD2090" reserve=""-->
+	<!--CheckItem platform="E98x" type="part_disable" projects="PD2091,PD2092" reserve=""-->
+</CheckItems>

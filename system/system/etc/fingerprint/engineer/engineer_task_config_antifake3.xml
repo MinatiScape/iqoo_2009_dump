@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TaskConfig version="1.0">
+    <Task name="BadPixelDetection" version="1.0">
+        <CommandRequest require="32543" loop="1" timeout="20000" extra="0"/>
+    </Task>
+    <Task name="OpticalCalibration1" version="1.0">
+        <RemoveFingerprintRequest/>
+        <FingerprintViewRequest windowState="1" boundType="0" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32554" loop="1" extra="1000"/>
+        <CommandRequest require="32554" loop="1" extra="1001"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32554" loop="1" extra="1002"/>
+        <FingerprintViewRequest windowState="1" iconType="4"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32554" loop="1" extra="1003"/>
+    </Task>
+    <Task name="OpticalCalibration2" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32555" loop="1" extra="1000"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32555" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32555" loop="1" extra="1002"/>
+        <FingerprintViewRequest windowState="1" iconType="4"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32555" loop="1" extra="1003"/>
+        <FingerprintViewRequest windowState="1" iconType="2"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32560" loop="1" timeout="10000" extra="0"/>
+    </Task>
+    <Task name="OpticalSnr1" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32556" loop="1" extra="1000"/>
+    </Task>
+    <Task name="OpticalSnr2" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="2" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32557" loop="1" extra="1000"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=2" alias="Spi" version="1.0">
+        <CommandRequest require="32549" loop="1" extra="0"/>
+    </Task>
+    <Task name="AT+BK_FDT_SNID=0" version="1.0">
+        <CommandRequest require="32562" loop="1" extra="0"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=3,1" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32556" loop="1" extra="1000"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=3,2" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32557" loop="1" extra="1000"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=1,1" version="1.0">
+        <BrightnessRequest targetBrightness="255"/>
+        <KeyguardRequest keyguardState="0"/>
+        <FingerprintViewRequest windowState="1" boundType="0" iconType="1"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32554" loop="1" extra="1000"/>
+        <CommandRequest require="32554" loop="1" extra="1001"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32554" loop="1" extra="1002"/>
+        <FingerprintViewRequest windowState="1" iconType="4"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32554" loop="1" extra="1003"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=1,2" version="1.0">
+        <BrightnessRequest targetBrightness="150"/>
+        <KeyguardRequest keyguardState="0"/>
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="1"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32555" loop="1" extra="1000"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32555" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32555" loop="1" extra="1002"/>
+        <FingerprintViewRequest windowState="1" iconType="4"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32555" loop="1" extra="1003"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=1,3" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="0" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32558" loop="1" extra="1000"/>
+    </Task>
+    <Task name="AT+BK_FDT_SNID=1" version="1.0">
+        <CommandRequest require="32612" loop="1" extra="0"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=0,0" version="1.0">
+        <CommandRequest require="32559" loop="1" extra="0"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=0,1" version="1.0">
+        <CommandRequest require="32559" loop="1" extra="1"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=0,2" version="1.0">
+        <CommandRequest require="32559" loop="1" extra="3"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=80" version="1.0">
+        <ActivityRequest className="com.vivo.fingerprintengineer.ui.engineer.EngineerActivity" testItem="udfp_calibration" fromAT="1"/>
+    </Task>
+    <Task name="OpticalOrt1" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="0" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32625" loop="1" extra="1000"/>
+        <FingerprintViewRequest windowState="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32625" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" iconType="0"/>
+        <BrightnessRequest targetBrightness="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32625" loop="1" extra="1002"/>
+    </Task>
+    <Task name="OpticalOrt2" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32626" loop="1" extra="1000"/>
+        <FingerprintViewRequest windowState="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32626" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" iconType="0"/>
+        <BrightnessRequest targetBrightness="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32626" loop="1" extra="1002"/>
+    </Task>
+    <Task name="OpticalOrt3" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="2" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32627" loop="1" extra="1000"/>
+        <FingerprintViewRequest windowState="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32627" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" iconType="0"/>
+        <BrightnessRequest targetBrightness="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32627" loop="1" extra="1002"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=4,1" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="0" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32625" loop="1" extra="1000"/>
+        <FingerprintViewRequest windowState="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32625" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" iconType="0"/>
+        <BrightnessRequest targetBrightness="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32625" loop="1" extra="1002"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=4,2" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32626" loop="1" extra="1000"/>
+        <FingerprintViewRequest windowState="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32626" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" iconType="0"/>
+        <BrightnessRequest targetBrightness="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32626" loop="1" extra="1002"/>
+    </Task>
+    <Task name="AT+BK_FDT_UDF=4,3" version="1.0">
+        <FingerprintViewRequest windowState="1" boundType="2" iconType="1"/>
+        <BrightnessRequest targetBrightness="255"/>
+        <HbmRequest hbmState="1"/>
+        <CommandRequest require="32627" loop="1" extra="1000"/>
+        <FingerprintViewRequest windowState="1" iconType="1"/>
+        <BrightnessRequest targetBrightness="150"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32627" loop="1" extra="1001"/>
+        <FingerprintViewRequest windowState="1" iconType="0"/>
+        <BrightnessRequest targetBrightness="0"/>
+        <HbmRequest hbmState="0"/>
+        <CommandRequest require="32627" loop="1" extra="1002"/>
+    </Task>
+    <Task name="CopyImage" version="1.0">
+        <CommandRequest require="32629" loop="1" timeout="1000" extra="0"/>
+    </Task>
+</TaskConfig>

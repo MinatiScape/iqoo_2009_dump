@@ -1,0 +1,9 @@
+libqvrservice_client.qti.so
+libqvrcamera_client.qti.so
+libupdateprof.qti.so
+libthermalclient.qti.so
+libQOC.qti.so
+libsxrservice_client.qti.so
+# vivo husanzai modify for B201013-3235 begin
+liblistenjni.qti.so
+# vivo husanzai modify for B201013-3235 end

@@ -1,0 +1,40 @@
+/product/app GoogleCalendarSyncAdapter
+/product/app Duo
+#compatibility install path
+/system/product/app GoogleCalendarSyncAdapter
+/system/product/app Duo
+/system/priv-app Mms
+/system/priv-app MmsService
+/system/priv-app RcsSDK
+/system/priv-app Contacts
+/system/priv-app EasyShare
+/system/priv-app VivoBrowser
+/system/priv-app NumberMark
+/system/priv-app Dialer
+/system/app VideoPlayer
+/system/app BBKCloud
+/system/app TrafficUpgrade
+/system/app vivogame
+/system/product/app YTMusic
+/product/app YTMusic
+/system/app InCallUI
+/system/app BBKTheme
+/system/app VivoUnionPayEx
+/system/app BBKNotes
+/system/app BBKWeather
+/system/app BBKWeatherProvider
+/system/app GlobalSearch
+/system/app VivoAssistant
+/system/app HiBoard
+/system/app vivoScan
+/system/app VivoTips
+/system/app DoubleTimezoneClock
+/system/priv-app TelephonyProvider
+/system/app GoogleLensTier2
+/system/priv-app Telecom
+/system/app VivoThemeRes
+/system/app MagazineService
+/system/priv-app VivoOffice
+
+#变更禁用互传
+/system/priv-app EasyShareTire2

@@ -1,0 +1,16 @@
+{
+ "engineModeForbidSarCali": 1,
+ "EngineModeRejectReduceSar": 1,
+ "SupportLuxAngle": 0,
+ "is_underproximitysensor": 1,
+ "SmartProx": 1,
+ "MinimumBrightHighThreshold": 357,
+ "UnderLightSupportHardwareBrightnessDelta": 1,
+ "UnderDisplayLight": 1,
+ "MaxBrightness": 2047,
+ "MultilevelBright": 1,
+ "ScreenOnWaitLux": 240,
+ "NotifyLcmBrightnessToDriverList": 0,
+ "GameOptimizeBrightness": 0.0298818,
+ "BoostBrightness": 573
+}

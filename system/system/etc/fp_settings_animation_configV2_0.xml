@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config version="2.0">
+    <project-config>
+        <item projects="PD2038,PD2039,PD2067" animation-list="100,17,16,15,12,13,8,7,10" icon-list="2,6,3,1,5,4" enter-animation="300"/>
+        <item projects="default" animation-list="100,17,16,15,12,13,8,7,10" icon-list="2,6,3,1,5,4" enter-animation="300"/>
+    </project-config>
+</config>

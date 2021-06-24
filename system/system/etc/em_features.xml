@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<boolean name="leds_support">false</boolean>
+	<boolean name="fm_support">false</boolean>
+	<boolean name="gyroscope_support">true</boolean>
+	<boolean name="dpdt_test">true</boolean>
+	<boolean name="flash_light_cali_support">true</boolean>
+	<boolean name="smart_spearker_amplifier_cali_support">true</boolean>
+	<boolean name="linear_motor_support">true</boolean>
+	<boolean name="speaker_resdetect_support">true</boolean>
+	<boolean name="diag_socket">true</boolean>
+	<boolean name="support_5g">true</boolean>
+	<boolean name="sub_echo_support">true</boolean>
+	<boolean name="lcm_light_sensor">true</boolean>
+	<boolean name="under_infrared_support">true</boolean>
+	<boolean name="under_infrared_low">true</boolean>
+	<string name="camera_type">back[Master,Wide,Tele]front[Master]</string>
+	<boolean name="double_battery">true</boolean>
+	<boolean name="sidekey_test">true</boolean>
+	<boolean name="light_sensor_angle">true</boolean>
+	<boolean name="linear_motor_2_support">true</boolean>
+	<boolean name="hifi_support">true</boolean>
+	<boolean name="light_sensor_leak">true</boolean>
+	<boolean name="touch_infrared_support">true</boolean>
+	<boolean name="multi_speaker_receiver_support">true</boolean>
+	<boolean name="high_rate_shadow_support">true</boolean>
+	<boolean name="front_camera_under_screen">true</boolean>
+	<boolean name="rear_main_wide_tele_unsupport">true</boolean>
+	<boolean name="multi_mic_echo_support">true</boolean>
+	<boolean name="sim_test_support">true</boolean>
+	<boolean name="reduce_sar_test">true</boolean>
+	<boolean name="sub_smart_spearker_amplifier_cali_support">true</boolean>
+</resources>

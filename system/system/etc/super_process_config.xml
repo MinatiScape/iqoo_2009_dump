@@ -1,0 +1,6 @@
+<config version="6">
+    <sps switch="on" enable-on="*"/>
+    <blacklist>
+        <package name="com.vivo.abe" />
+    </blacklist>
+</config>

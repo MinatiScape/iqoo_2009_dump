@@ -1,0 +1,29 @@
+#init.rc for vivo
+on property:persist.vivo.wifi.tcp.parameter.enable=true
+    write /proc/sys/net/ipv4/tcp_syn_retries 6
+
+on post-fs-data
+    #vivo XieJiYuan add for bbkpanic begin
+    mkdir /data/bbkpanic 0777 root system encryption=Attempt
+    #vivo XieJiYuan add for bbkpanic end
+
+# vivo laifeilong add for xtra property begin
+on property:persist.vivo.gnss.log.level=*
+    setprop vendor.qti.location.force.debug ${persist.vivo.gnss.log.level}
+
+on property:persist.vivo.gnss.restart_launcher=true
+    setprop vendor.qti.location.force.debug ${persist.vivo.gnss.log.level}
+    restart loc_launcher
+    setprop persist.vivo.gnss.restart_launcher false
+# vivo laifeilong add for xtra property end
+
+# vivo YuanQiuxing add for bt cl logs start
+# zip and move logs to location specified by cloud diag (for uploading)
+service cl_bt_logs /system/bin/cl_bt_logs.sh
+    class main
+    user root
+    group root system bluetooth
+    disabled
+    oneshot
+# vivo YuanQiuxing add for bt cl logs end
+
